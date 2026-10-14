@@ -34,7 +34,7 @@ infraestrutura comum.
 | Cluster | k3s v1.36.4, um nó, Ubuntu 24.04, ARM64 |
 | Capacidade alocável | 2 vCPU, aproximadamente 11,6 GiB de memória e 42 GiB de armazenamento efêmero |
 | Persistência | StorageClass `local-path` |
-| Entrada HTTP | Kong 3.9 (chart `kong/ingress` 0.24.0) atrás do ServiceLB do k3s |
+| Entrada HTTP | Kong 3.9 (chart `kong/ingress` 0.24.0) atrás do ServiceLB do k3s; CRDs da Gateway API **ainda não instalados** (só há `Ingress` do CaIA) |
 | TLS | cert-manager v1.21.2, Let's Encrypt com DNS-01 no Cloudflare |
 | GitOps | Argo CD v3.5.3 |
 | Observabilidade | Grafana Alloy v1.19.2 (`k8s-monitoring` 4.5.2) enviando ao Grafana Cloud |
@@ -77,7 +77,7 @@ depois dele, toda alteração nos componentes da plataforma será feita por comm
 | Organização | `tcc-platform` (tudo o que o Argo aplica) + `tcc-pipeline-templates` (templates de CI backend/frontend) + um repositório de código por aplicação | Separa código de configuração (padrão GitOps); o CI de cada aplicação é um `ci.yml` curto que chama o template compartilhado, como os templates `extends` de Azure Pipelines usados em ambiente corporativo; o CI só altera o overlay da própria aplicação. |
 | GitOps | Argo CD com padrão app-of-apps | Separa bootstrap, plataforma e futuras aplicações. |
 | Manifestos | Kustomize | Já vem no `kubectl` e permite reutilizar um base sem duplicação. |
-| Entrada HTTP | Kong (Gateway API/Ingress) atrás do ServiceLB do k3s | Publica HTTP/HTTPS pela VM sem MetalLB; o `ingress-nginx` foi aposentado pelo projeto Kubernetes. |
+| Entrada HTTP | Kong como implementação da **Gateway API** (`GatewayClass`/`Gateway` + `HTTPRoute` por aplicação), atrás do ServiceLB do k3s. **Não usar Ingress.** | API de roteamento atual do Kubernetes, que separa o que é da plataforma (Gateway, TLS) do que é da aplicação (rotas); publica HTTP/HTTPS pela VM sem MetalLB. Exige instalar os CRDs da Gateway API (o cluster hoje só tem os `Ingress` do CaIA). |
 | TLS | cert-manager, após haver domínio/DNS | Permite demonstrar HTTPS automático com Let’s Encrypt. |
 | Registry | GHCR ou Docker Hub, com imagens `linux/arm64` | A VM é ARM64; imagem somente `amd64` não executará nela. |
 | Segredos | **OCI Vault** + **External Secrets Operator** (ClusterSecretStore com Instance Principal) | Os valores ficam só no Vault da OCI; o Git guarda apenas quais secrets do Vault viram quais chaves no Kubernetes. A VM se autentica na OCI por Instance Principal (Dynamic Group + Policy `read secret-family`), sem credencial dentro do cluster. Vault padrão com chave *Software* não tem custo. |
@@ -96,7 +96,7 @@ tcc-platform/
 │   ├── root-application.yaml   # ponto de entrada do Argo CD
 │   └── kustomization.yaml
 ├── platform/
-│   ├── ingress/
+│   ├── gateway/
 │   ├── cert-manager/
 │   ├── observability/
 │   ├── external-secrets/       # operador + ClusterSecretStore do OCI Vault
@@ -128,7 +128,7 @@ instalar componentes.
 - Registrar versões do Ubuntu, k3s, Kubernetes, recursos do nó e StorageClass.
 - Restringir a API Kubernetes (`6443`) ao IP administrativo; não expô-la para a
   internet inteira.
-- Liberar `80` e `443` somente quando o Ingress estiver instalado; manter SSH
+- Liberar `80` e `443` somente quando o Gateway estiver instalado; manter SSH
   protegido por chave e regra de origem restrita.
 - Criar namespaces `argocd`, `monitoring`, `kong`, `external-secrets` e `apps`.
 - Definir limites de recursos para o Alloy (a retenção fica no Grafana Cloud).
