@@ -1,0 +1,38 @@
+{
+ "app": "catalogo-api",
+ "rep": "2",
+ "run": 42516705773,
+ "tag": "sha-a94bc53ea0db",
+ "commit_plataforma": "627116a6f6f1",
+ "nota": "",
+ "t_push": "2026-11-08T19:46:26.223Z",
+ "t_run_inicio": "2026-11-08T19:46:25Z",
+ "t_commit_plataforma": "2026-11-08T19:48:45.000Z",
+ "t_argo_detectou": "2026-11-08T19:49:03.154Z",
+ "t_no_ar": "2026-11-08T19:49:10.391Z",
+ "esteira_s": 138.8,
+ "testes_s": 54.0,
+ "build_s": 77.0,
+ "deteccao_argo_s": 18.2,
+ "reconciliacao_s": 25.4,
+ "total_s": 164.2
+}
+{
+ "app": "catalogo-api",
+ "rep": "3",
+ "run": 42516947750,
+ "tag": "sha-0b8c8ed5a154",
+ "commit_plataforma": "abb33c8d0618",
+ "nota": "",
+ "t_push": "2026-11-08T19:49:17.584Z",
+ "t_run_inicio": "2026-11-08T19:49:19Z",
+ "t_commit_plataforma": "2026-11-08T19:51:31.000Z",
+ "t_argo_detectou": "2026-11-08T19:51:56.098Z",
+ "t_no_ar": "2026-11-08T19:52:04.528Z",
+ "esteira_s": 133.4,
+ "testes_s": 49.0,
+ "build_s": 74.0,
+ "deteccao_argo_s": 25.1,
+ "reconciliacao_s": 33.5,
+ "total_s": 166.9
+}

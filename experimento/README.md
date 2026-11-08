@@ -14,3 +14,12 @@ Avaliação da plataforma (Capítulo 5 e Apêndice D do TCC). Tudo em UTC; dados
 | `analisar.py` | consolida `dados/` em `resultados.json`, lido por `texto/build_tcc.js` |
 
 Requisitos: `gh` autenticado, `kubectl` no contexto `k3s-jhone-prd`, clones dos 5 repositórios lado a lado.
+
+## Teste de onboarding com um colega (pendente)
+
+Quando realizado, criar `dados/colega.json` e regenerar (`python3 -I analisar.py` e `node build_tcc.js`):
+
+```json
+{"quem": "um colega de curso", "aplicacao": "uma cópia do catalogo-front", "tempo_min": 0, "passos": 0,
+ "arquivos_fora": 0, "ajudas": "", "observacoes": "Frase sobre onde a documentação ajudou ou falhou."}
+```

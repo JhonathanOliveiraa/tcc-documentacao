@@ -54,7 +54,7 @@ for tipo in ("inicializacao", "funcional"):
     reps = [d for d in fal if d["tipo"] == tipo]
     res["recuperacao"][tipo] = {
         "repeticoes": reps,
-        **{k: resumo([d[k] for d in reps]) for k in ("deteccao_s", "reacao_s", "reconciliacao_s", "total_s", "argo_detectou_reversao_s")},
+        **{k: resumo([d.get(k) for d in reps]) for k in ("deteccao_s", "reacao_s", "reconciliacao_s", "total_s", "argo_detectou_reversao_s", "deteccao_sonda_s")},
         "health_publico_durante_falha": sorted({d["health_publico_durante_falha"] for d in reps}),
     }
 
@@ -100,6 +100,21 @@ def overhead(arq):
                  "amostras": len(v["cpu"])} for ns, v in sorted(por.items())}
 
 res["overhead"] = {"sem_apps": overhead("overhead-sem-apps.csv"), "com_apps_carga": overhead("overhead-com-apps.csv")}
+
+# --- esteira: execuções por push na avaliação e as barradas antes do cluster ---
+runs = []
+for app in ("catalogo-api", "catalogo-front"):
+    lst = json.loads(subprocess.run(["gh", "run", "list", "-R", f"JhonathanOliveiraa/{app}", "-L", "100", "--json",
+                                     "databaseId,event,conclusion,createdAt,displayTitle"],
+                                    check=True, capture_output=True, text=True).stdout)
+    runs += [dict(r, app=app) for r in lst if r["event"] == "push" and r["createdAt"] >= "2026-11-08"]
+barradas = [r for r in runs if r["conclusion"] == "failure"]
+motivos = {"catalogo-front": "uma pelo Trivy, por uma vulnerabilidade crítica com correção disponível na imagem base do nginx",
+           "catalogo-api": "uma pelos testes de integração, por um erro no tipo de conteúdo das respostas de validação"}
+(DADOS / "esteira.json").write_text(json.dumps({
+    "publicacoes": len(runs), "barradas": len(barradas),
+    "descricao_barradas": "; ".join(motivos[r["app"]] for r in barradas),
+    "execucoes": runs}, ensure_ascii=False, indent=2), encoding="utf-8")
 
 # --- observabilidade e esteira ---
 for extra in ("observabilidade.json", "esteira.json", "colega.json"):

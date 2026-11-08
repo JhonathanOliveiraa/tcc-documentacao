@@ -1,0 +1,229 @@
+{
+ "tipo": "inicializacao",
+ "rep": "1",
+ "tag_defeituosa": "sha-4045aedf994a",
+ "tag_estavel": "sha-f4e5be108dc2",
+ "t0": "2026-11-08T20:29:35.000Z",
+ "t1": "2026-11-08T20:33:04.390Z",
+ "t2": "2026-11-08T20:33:09.472Z",
+ "t3": "2026-11-08T20:34:06.090Z",
+ "deteccao_s": 209.4,
+ "reacao_s": 5.1,
+ "reconciliacao_s": 56.6,
+ "total_s": 271.1,
+ "health_publico_durante_falha": 200,
+ "argo_detectou_reversao_s": 53.0
+}
+{
+ "app": "catalogo-api",
+ "rep": "pos-falha-inicializacao-1",
+ "run": 42520833032,
+ "tag": "sha-f42da05f62d5",
+ "commit_plataforma": "36d35e8e62cb",
+ "nota": "revert do defeito no repositório da app",
+ "t_push": "2026-11-08T20:34:39.206Z",
+ "t_run_inicio": "2026-11-08T20:34:39Z",
+ "t_commit_plataforma": "2026-11-08T20:37:49.000Z",
+ "t_argo_detectou": "2026-11-08T20:38:56.258Z",
+ "t_no_ar": "2026-11-08T20:39:04.653Z",
+ "esteira_s": 189.8,
+ "testes_s": 61.0,
+ "build_s": 119.0,
+ "deteccao_argo_s": 67.3,
+ "reconciliacao_s": 75.7,
+ "total_s": 265.4
+}
+{
+ "tipo": "inicializacao",
+ "rep": "2",
+ "tag_defeituosa": "sha-345f8307fbfe",
+ "tag_estavel": "sha-f42da05f62d5",
+ "t0": "2026-11-08T20:41:25.000Z",
+ "t1": "2026-11-08T20:46:59.838Z",
+ "t2": "2026-11-08T20:47:06.860Z",
+ "t3": "2026-11-08T20:48:07.162Z",
+ "deteccao_s": 334.8,
+ "reacao_s": 7.0,
+ "reconciliacao_s": 60.3,
+ "total_s": 402.2,
+ "health_publico_durante_falha": 200,
+ "argo_detectou_reversao_s": 56.8
+}
+{
+ "app": "catalogo-api",
+ "rep": "pos-falha-inicializacao-2",
+ "run": 42522001130,
+ "tag": "sha-659921dc0855",
+ "commit_plataforma": "98771009e2f7",
+ "nota": "revert do defeito no repositório da app",
+ "t_push": "2026-11-08T20:48:40.266Z",
+ "t_run_inicio": "2026-11-08T20:48:40Z",
+ "t_commit_plataforma": "2026-11-08T20:51:31.000Z",
+ "t_argo_detectou": "2026-11-08T20:52:52.240Z",
+ "t_no_ar": "2026-11-08T20:53:07.828Z",
+ "esteira_s": 170.7,
+ "testes_s": 59.0,
+ "build_s": 103.0,
+ "deteccao_argo_s": 81.2,
+ "reconciliacao_s": 96.8,
+ "total_s": 267.6
+}
+{
+ "tipo": "inicializacao",
+ "rep": "3",
+ "tag_defeituosa": "sha-58c3cf844d94",
+ "tag_estavel": "sha-659921dc0855",
+ "t0": "2026-11-08T20:55:29.000Z",
+ "t1": "2026-11-08T20:59:56.669Z",
+ "t2": "2026-11-08T21:00:02.476Z",
+ "t3": "2026-11-08T21:02:02.102Z",
+ "deteccao_s": 267.7,
+ "reacao_s": 5.8,
+ "reconciliacao_s": 119.6,
+ "total_s": 393.1,
+ "health_publico_durante_falha": 200,
+ "argo_detectou_reversao_s": 116.0
+}
+{
+ "app": "catalogo-api",
+ "rep": "pos-falha-inicializacao-3",
+ "run": 42523150950,
+ "tag": "sha-fa0cebf00174",
+ "commit_plataforma": "02f0b3c7a948",
+ "nota": "revert do defeito no repositório da app",
+ "t_push": "2026-11-08T21:02:35.020Z",
+ "t_run_inicio": "2026-11-08T21:02:35Z",
+ "t_commit_plataforma": "2026-11-08T21:05:13.000Z",
+ "t_argo_detectou": "2026-11-08T21:08:00.903Z",
+ "t_no_ar": "2026-11-08T21:08:17.471Z",
+ "esteira_s": 158.0,
+ "testes_s": 57.0,
+ "build_s": 90.0,
+ "deteccao_argo_s": 167.9,
+ "reconciliacao_s": 184.5,
+ "total_s": 342.5
+}
+Traceback (most recent call last):
+  File "/mnt/c/Users/jhone/OneDrive/Documents/Git/ProjetosParalelos/TCC/TCC-Jhonathan/tcc-documentacao/experimento/medir.py", line 288, in <module>
+    falha(sys.argv[2], sys.argv[3])
+  File "/mnt/c/Users/jhone/OneDrive/Documents/Git/ProjetosParalelos/TCC/TCC-Jhonathan/tcc-documentacao/experimento/medir.py", line 253, in falha
+    sh("git", "pull", "-q", "--rebase", cwd=plat)
+  File "/mnt/c/Users/jhone/OneDrive/Documents/Git/ProjetosParalelos/TCC/TCC-Jhonathan/tcc-documentacao/experimento/medir.py", line 45, in sh
+    raise RuntimeError(f"{args}: {r.stderr.strip()}")
+RuntimeError: ('git', 'pull', '-q', '--rebase'): error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+FALHOU funcional 1
+{
+ "tipo": "funcional",
+ "rep": "1",
+ "tag_defeituosa": "sha-88cc2a133c64",
+ "tag_estavel": "sha-c4f915c6ffc6",
+ "t0": "2026-11-08T21:23:45.000Z",
+ "t1": "2026-11-08T21:28:49.732Z",
+ "t2": "2026-11-08T21:28:56.418Z",
+ "t3": "2026-11-08T21:30:18.057Z",
+ "deteccao_s": 304.7,
+ "reacao_s": 6.7,
+ "reconciliacao_s": 81.6,
+ "total_s": 393.1,
+ "health_publico_durante_falha": 200,
+ "detector": "alerta Erros 5xx na API (Grafana Cloud)",
+ "t1_sonda": "2026-11-08T21:24:05.041Z",
+ "deteccao_sonda_s": 20.0,
+ "argo_detectou_reversao_s": 61.5
+}
+{
+ "app": "catalogo-api",
+ "rep": "pos-falha-funcional-1",
+ "run": 42525579069,
+ "tag": "sha-35d004e918ae",
+ "commit_plataforma": "d2a93fc16f07",
+ "nota": "revert do defeito no repositório da app",
+ "t_push": "2026-11-08T21:30:51.258Z",
+ "t_run_inicio": "2026-11-08T21:30:52Z",
+ "t_commit_plataforma": "2026-11-08T21:33:07.000Z",
+ "t_argo_detectou": "2026-11-08T21:35:53.570Z",
+ "t_no_ar": "2026-11-08T21:36:16.086Z",
+ "esteira_s": 135.7,
+ "testes_s": 47.0,
+ "build_s": 79.0,
+ "deteccao_argo_s": 166.6,
+ "reconciliacao_s": 189.1,
+ "total_s": 324.8
+}
+{
+ "tipo": "funcional",
+ "rep": "2",
+ "tag_defeituosa": "sha-401a59becac7",
+ "tag_estavel": "sha-35d004e918ae",
+ "t0": "2026-11-08T21:37:51.000Z",
+ "t1": "2026-11-08T21:42:45.862Z",
+ "t2": "2026-11-08T21:42:52.846Z",
+ "t3": "2026-11-08T21:44:17.380Z",
+ "deteccao_s": 294.9,
+ "reacao_s": 7.0,
+ "reconciliacao_s": 84.5,
+ "total_s": 386.4,
+ "health_publico_durante_falha": 200,
+ "detector": "alerta Erros 5xx na API (Grafana Cloud)",
+ "t1_sonda": "2026-11-08T21:38:08.672Z",
+ "deteccao_sonda_s": 17.7,
+ "argo_detectou_reversao_s": 67.9
+}
+{
+ "app": "catalogo-api",
+ "rep": "pos-falha-funcional-2",
+ "run": 42526728821,
+ "tag": "sha-0690d7642d63",
+ "commit_plataforma": "016068cd5e17",
+ "nota": "revert do defeito no repositório da app",
+ "t_push": "2026-11-08T21:44:50.542Z",
+ "t_run_inicio": "2026-11-08T21:44:51Z",
+ "t_commit_plataforma": "2026-11-08T21:46:57.000Z",
+ "t_argo_detectou": "2026-11-08T21:48:59.984Z",
+ "t_no_ar": "2026-11-08T21:49:10.719Z",
+ "esteira_s": 126.5,
+ "testes_s": 52.0,
+ "build_s": 61.0,
+ "deteccao_argo_s": 123.0,
+ "reconciliacao_s": 133.7,
+ "total_s": 260.2
+}
+{
+ "tipo": "funcional",
+ "rep": "3",
+ "tag_defeituosa": "sha-65fc683342fb",
+ "tag_estavel": "sha-0690d7642d63",
+ "t0": "2026-11-08T21:51:14.000Z",
+ "t1": "2026-11-08T21:56:46.064Z",
+ "t2": "2026-11-08T21:56:52.879Z",
+ "t3": "2026-11-08T21:59:17.116Z",
+ "deteccao_s": 332.1,
+ "reacao_s": 6.8,
+ "reconciliacao_s": 144.2,
+ "total_s": 483.1,
+ "health_publico_durante_falha": 200,
+ "detector": "alerta Erros 5xx na API (Grafana Cloud)",
+ "t1_sonda": "2026-11-08T21:52:10.262Z",
+ "deteccao_sonda_s": 56.3,
+ "argo_detectou_reversao_s": 124.0
+}
+{
+ "app": "catalogo-api",
+ "rep": "pos-falha-funcional-3",
+ "run": 42527944791,
+ "tag": "sha-1e0b5fbfe70f",
+ "commit_plataforma": "b1ce95476e9a",
+ "nota": "revert do defeito no repositório da app",
+ "t_push": "2026-11-08T21:59:50.483Z",
+ "t_run_inicio": "2026-11-08T21:59:50Z",
+ "t_commit_plataforma": "2026-11-08T22:02:35.000Z",
+ "t_argo_detectou": "2026-11-08T22:02:56.058Z",
+ "t_no_ar": "2026-11-08T22:03:16.101Z",
+ "esteira_s": 164.5,
+ "testes_s": 54.0,
+ "build_s": 103.0,
+ "deteccao_argo_s": 21.1,
+ "reconciliacao_s": 41.1,
+ "total_s": 205.6
+}

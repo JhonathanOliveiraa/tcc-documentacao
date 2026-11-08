@@ -273,6 +273,7 @@ pretextual.push(htop("LISTA DE ABREVIATURAS E SIGLAS"));
   ["RF", "Requisito Funcional"],
   ["RNF", "Requisito Não Funcional"],
   ["SDK", "Software Development Kit"],
+  ["SLO", "Service Level Objective (objetivo de nível de serviço)"],
   ["SPA", "Single Page Application"],
   ["TCC", "Trabalho de Conclusão de Curso"],
   ["TLS", "Transport Layer Security"],

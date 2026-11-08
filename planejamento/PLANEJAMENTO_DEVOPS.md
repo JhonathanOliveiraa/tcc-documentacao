@@ -1,5 +1,12 @@
 # Planejamento da parte prática — Plataforma DevOps para o TCC
 
+> **Status em 2026-11-08 (após o parecer do orientador de 2026-11-04):** Fases 1 a 7 concluídas.
+> `catalogo-api` e `catalogo-front` implementadas e no ar em hml e prd pela esteira e pelo Argo CD;
+> avaliação executada conforme o Apêndice D do texto, com scripts e dados brutos em `../experimento/`.
+> As "Decisões pendentes" abaixo estão todas resolvidas (GitHub + GHCR + Actions, domínio
+> `tcc.altasistemas.com.br`, Gateway API do Kong, OCI Vault + ESO, Grafana Cloud). As figuras do texto
+> são as de `../texto/figuras/` (a numeração da tabela "Evidências" abaixo é a do plano original).
+
 > **Status em 2026-09-30:** o cluster descrito aqui recebeu uma aplicação real (CaIA — API .NET +
 > frontend Angular, prod e hml) por uma esteira GitOps completa. Decisões, problemas, causas-raiz e
 > medições estão em [`APRENDIZADOS_MIGRACAO_CAIA.md`](APRENDIZADOS_MIGRACAO_CAIA.md). O CaIA serviu

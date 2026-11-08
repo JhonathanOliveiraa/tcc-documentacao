@@ -1,0 +1,38 @@
+{
+ "app": "catalogo-front",
+ "rep": "2",
+ "run": 42516706540,
+ "tag": "sha-e349a87318ac",
+ "commit_plataforma": "10384640a19a",
+ "nota": "",
+ "t_push": "2026-11-08T19:46:26.373Z",
+ "t_run_inicio": "2026-11-08T19:46:25Z",
+ "t_commit_plataforma": "2026-11-08T19:48:25.000Z",
+ "t_argo_detectou": "2026-11-08T19:49:09.877Z",
+ "t_no_ar": "2026-11-08T19:49:09.877Z",
+ "esteira_s": 118.6,
+ "testes_s": 29.0,
+ "build_s": 82.0,
+ "deteccao_argo_s": 44.9,
+ "reconciliacao_s": 44.9,
+ "total_s": 163.5
+}
+{
+ "app": "catalogo-front",
+ "rep": "3",
+ "run": 42516947701,
+ "tag": "sha-c1937c23d5f1",
+ "commit_plataforma": "e7185e152305",
+ "nota": "",
+ "t_push": "2026-11-08T19:49:17.477Z",
+ "t_run_inicio": "2026-11-08T19:49:19Z",
+ "t_commit_plataforma": "2026-11-08T19:51:18.000Z",
+ "t_argo_detectou": "2026-11-08T19:53:03.275Z",
+ "t_no_ar": "2026-11-08T19:53:03.275Z",
+ "esteira_s": 120.5,
+ "testes_s": 37.0,
+ "build_s": 72.0,
+ "deteccao_argo_s": 105.3,
+ "reconciliacao_s": 105.3,
+ "total_s": 225.8
+}

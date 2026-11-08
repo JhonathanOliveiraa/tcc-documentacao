@@ -1,0 +1,32 @@
+2026-11-08T16:07:02-03:00
+NAME   CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+k3s    381m         19%      5193Mi          43%         
+
+argocd             argocd-application-controller-0                           8m    201Mi    
+argocd             argocd-applicationset-controller-84549767db-6fcdq         1m    30Mi     
+argocd             argocd-dex-server-6cc5dd7c9d-qlqrn                        1m    27Mi     
+argocd             argocd-notifications-controller-57d4c66f69-fm7vj          1m    20Mi     
+argocd             argocd-redis-c55679569-2qfrj                              5m    5Mi      
+argocd             argocd-repo-server-7f9fdfbb74-fsqsn                       2m    101Mi    
+argocd             argocd-server-5f785dd555-w7j5m                            2m    28Mi     
+catalogo-api-hml   postgres-0                                                6m    24Mi     
+catalogo-api-prd   postgres-0                                                4m    26Mi     
+cert-manager       cert-manager-848b846c6f-w49gz                             1m    67Mi     
+cert-manager       cert-manager-cainjector-6468bc96c7-lf8gt                  1m    45Mi     
+cert-manager       cert-manager-webhook-558c6d4f4d-7rgtm                     1m    41Mi     
+external-secrets   external-secrets-5869fd6956-2wdrb                         1m    37Mi     
+external-secrets   external-secrets-cert-controller-78d7b46f44-9vnk4         1m    51Mi     
+external-secrets   external-secrets-webhook-775878454b-9sdgr                 1m    27Mi     
+kong               kong-controller-7cfc88bd6-gqrkd                           3m    46Mi     
+kong               kong-gateway-9647d9d65-2pslb                              3m    389Mi    
+kube-system        coredns-54996dc9b4-rghpv                                  2m    36Mi     
+kube-system        local-path-provisioner-77b9867795-qg9wh                   1m    27Mi     
+kube-system        metrics-server-6dc596dfb8-w9fx4                           5m    44Mi     
+kube-system        svclb-kong-gateway-proxy-52905c85-vnz4x                   0m    0Mi      
+monitoring         beyla-k8s-cache-555dc79bf4-zr6jn                          1m    15Mi     
+monitoring         grafana-cloud-alloy-cxp8p                                 30m   1053Mi   
+monitoring         grafana-cloud-alloy-operator-6f45bd65bf-2rzp5             17m   46Mi     
+monitoring         grafana-cloud-k8s-injection-controller-66c8d67b8d-nztbx   2m    17Mi     
+monitoring         grafana-cloud-kube-state-metrics-66b46f456f-f7fs5         2m    27Mi     
+monitoring         grafana-cloud-node-exporter-zk2tx                         1m    14Mi     
+reloader           reloader-reloader-995f46b94-g8b2w                         1m    13Mi     

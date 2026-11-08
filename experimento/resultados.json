@@ -1,0 +1,1147 @@
+{
+  "implantacao": {
+    "catalogo-api": {
+      "repeticoes": [
+        {
+          "app": "catalogo-api",
+          "rep": "1",
+          "run": 42516072153,
+          "tag": "sha-5a94d78a60e1",
+          "commit_plataforma": "3cc720e26373",
+          "nota": "correção do OpenAPI (enums como string)",
+          "t_push": "2026-11-08T19:38:46.251Z",
+          "t_run_inicio": "2026-11-08T19:38:49Z",
+          "t_commit_plataforma": "2026-11-08T19:41:37.000Z",
+          "t_argo_detectou": "2026-11-08T19:42:58.541Z",
+          "t_no_ar": "2026-11-08T19:43:18.727Z",
+          "esteira_s": 170.7,
+          "testes_s": 50.0,
+          "build_s": 108.0,
+          "deteccao_argo_s": 81.5,
+          "reconciliacao_s": 101.7,
+          "total_s": 272.5
+        },
+        {
+          "app": "catalogo-api",
+          "rep": "2",
+          "run": 42516705773,
+          "tag": "sha-a94bc53ea0db",
+          "commit_plataforma": "627116a6f6f1",
+          "nota": "",
+          "t_push": "2026-11-08T19:46:26.223Z",
+          "t_run_inicio": "2026-11-08T19:46:25Z",
+          "t_commit_plataforma": "2026-11-08T19:48:45.000Z",
+          "t_argo_detectou": "2026-11-08T19:49:03.154Z",
+          "t_no_ar": "2026-11-08T19:49:10.391Z",
+          "esteira_s": 138.8,
+          "testes_s": 54.0,
+          "build_s": 77.0,
+          "deteccao_argo_s": 18.2,
+          "reconciliacao_s": 25.4,
+          "total_s": 164.2
+        },
+        {
+          "app": "catalogo-api",
+          "rep": "3",
+          "run": 42516947750,
+          "tag": "sha-0b8c8ed5a154",
+          "commit_plataforma": "abb33c8d0618",
+          "nota": "",
+          "t_push": "2026-11-08T19:49:17.584Z",
+          "t_run_inicio": "2026-11-08T19:49:19Z",
+          "t_commit_plataforma": "2026-11-08T19:51:31.000Z",
+          "t_argo_detectou": "2026-11-08T19:51:56.098Z",
+          "t_no_ar": "2026-11-08T19:52:04.528Z",
+          "esteira_s": 133.4,
+          "testes_s": 49.0,
+          "build_s": 74.0,
+          "deteccao_argo_s": 25.1,
+          "reconciliacao_s": 33.5,
+          "total_s": 166.9
+        }
+      ],
+      "primeira": {
+        "app": "catalogo-api",
+        "rep": "primeira",
+        "run": 42514838473,
+        "tag": "sha-786bdec8aa62",
+        "commit_plataforma": "8bb40cbc09ae",
+        "nota": "primeira implantação (onboarding)",
+        "t_push": "2026-11-08T19:23:55.000Z",
+        "t_run_inicio": "2026-11-08T19:23:55Z",
+        "t_commit_plataforma": "2026-11-08T19:28:00.000Z",
+        "t_argo_detectou": "2026-11-08T19:35:23.598Z",
+        "t_no_ar": "2026-11-08T19:35:23.598Z",
+        "esteira_s": 245.0,
+        "testes_s": 57.0,
+        "build_s": 178.0,
+        "deteccao_argo_s": 443.6,
+        "reconciliacao_s": 443.6,
+        "total_s": 688.6
+      },
+      "esteira_s": {
+        "n": 3,
+        "media": 147.6,
+        "min": 133.4,
+        "max": 170.7
+      },
+      "testes_s": {
+        "n": 3,
+        "media": 51.0,
+        "min": 49.0,
+        "max": 54.0
+      },
+      "build_s": {
+        "n": 3,
+        "media": 86.3,
+        "min": 74.0,
+        "max": 108.0
+      },
+      "deteccao_argo_s": {
+        "n": 3,
+        "media": 41.6,
+        "min": 18.2,
+        "max": 81.5
+      },
+      "reconciliacao_s": {
+        "n": 3,
+        "media": 53.5,
+        "min": 25.4,
+        "max": 101.7
+      },
+      "total_s": {
+        "n": 3,
+        "media": 201.2,
+        "min": 164.2,
+        "max": 272.5
+      },
+      "todas_total_s": {
+        "n": 11,
+        "media": 297.1,
+        "min": 164.2,
+        "max": 688.6
+      }
+    },
+    "catalogo-front": {
+      "repeticoes": [
+        {
+          "app": "catalogo-front",
+          "rep": "1",
+          "run": 42516174011,
+          "tag": "sha-87e92706518f",
+          "commit_plataforma": "cde01af22f5a",
+          "nota": "OpenAPI real da API",
+          "t_push": "2026-11-08T19:39:59.727Z",
+          "t_run_inicio": "2026-11-08T19:40:04Z",
+          "t_commit_plataforma": "2026-11-08T19:43:51.000Z",
+          "t_argo_detectou": "2026-11-08T19:44:59.778Z",
+          "t_no_ar": "2026-11-08T19:45:08.164Z",
+          "esteira_s": 231.3,
+          "testes_s": 24.0,
+          "build_s": 189.0,
+          "deteccao_argo_s": 68.8,
+          "reconciliacao_s": 77.2,
+          "total_s": 308.4
+        },
+        {
+          "app": "catalogo-front",
+          "rep": "2",
+          "run": 42516706540,
+          "tag": "sha-e349a87318ac",
+          "commit_plataforma": "10384640a19a",
+          "nota": "",
+          "t_push": "2026-11-08T19:46:26.373Z",
+          "t_run_inicio": "2026-11-08T19:46:25Z",
+          "t_commit_plataforma": "2026-11-08T19:48:25.000Z",
+          "t_argo_detectou": "2026-11-08T19:49:09.877Z",
+          "t_no_ar": "2026-11-08T19:49:09.877Z",
+          "esteira_s": 118.6,
+          "testes_s": 29.0,
+          "build_s": 82.0,
+          "deteccao_argo_s": 44.9,
+          "reconciliacao_s": 44.9,
+          "total_s": 163.5
+        },
+        {
+          "app": "catalogo-front",
+          "rep": "3",
+          "run": 42516947701,
+          "tag": "sha-c1937c23d5f1",
+          "commit_plataforma": "e7185e152305",
+          "nota": "",
+          "t_push": "2026-11-08T19:49:17.477Z",
+          "t_run_inicio": "2026-11-08T19:49:19Z",
+          "t_commit_plataforma": "2026-11-08T19:51:18.000Z",
+          "t_argo_detectou": "2026-11-08T19:53:03.275Z",
+          "t_no_ar": "2026-11-08T19:53:03.275Z",
+          "esteira_s": 120.5,
+          "testes_s": 37.0,
+          "build_s": 72.0,
+          "deteccao_argo_s": 105.3,
+          "reconciliacao_s": 105.3,
+          "total_s": 225.8
+        }
+      ],
+      "primeira": {
+        "app": "catalogo-front",
+        "rep": "primeira",
+        "run": 42514918861,
+        "tag": "sha-5003596aef2d",
+        "commit_plataforma": "e22947b864b1",
+        "nota": "primeira implantação (onboarding)",
+        "t_push": "2026-11-08T19:24:54.000Z",
+        "t_run_inicio": "2026-11-08T19:24:54Z",
+        "t_commit_plataforma": "2026-11-08T19:28:03.000Z",
+        "t_argo_detectou": "2026-11-08T19:33:07.062Z",
+        "t_no_ar": "2026-11-08T19:33:17.890Z",
+        "esteira_s": 189.0,
+        "testes_s": 37.0,
+        "build_s": 143.0,
+        "deteccao_argo_s": 304.1,
+        "reconciliacao_s": 314.9,
+        "total_s": 503.9
+      },
+      "esteira_s": {
+        "n": 3,
+        "media": 156.8,
+        "min": 118.6,
+        "max": 231.3
+      },
+      "testes_s": {
+        "n": 3,
+        "media": 30.0,
+        "min": 24.0,
+        "max": 37.0
+      },
+      "build_s": {
+        "n": 3,
+        "media": 114.3,
+        "min": 72.0,
+        "max": 189.0
+      },
+      "deteccao_argo_s": {
+        "n": 3,
+        "media": 73.0,
+        "min": 44.9,
+        "max": 105.3
+      },
+      "reconciliacao_s": {
+        "n": 3,
+        "media": 75.8,
+        "min": 44.9,
+        "max": 105.3
+      },
+      "total_s": {
+        "n": 3,
+        "media": 232.6,
+        "min": 163.5,
+        "max": 308.4
+      },
+      "todas_total_s": {
+        "n": 4,
+        "media": 300.4,
+        "min": 163.5,
+        "max": 503.9
+      }
+    }
+  },
+  "recuperacao": {
+    "inicializacao": {
+      "repeticoes": [
+        {
+          "tipo": "inicializacao",
+          "rep": "1",
+          "tag_defeituosa": "sha-4045aedf994a",
+          "tag_estavel": "sha-f4e5be108dc2",
+          "t0": "2026-11-08T20:29:35.000Z",
+          "t1": "2026-11-08T20:33:04.390Z",
+          "t2": "2026-11-08T20:33:09.472Z",
+          "t3": "2026-11-08T20:34:06.090Z",
+          "deteccao_s": 209.4,
+          "reacao_s": 5.1,
+          "reconciliacao_s": 56.6,
+          "total_s": 271.1,
+          "health_publico_durante_falha": 200,
+          "argo_detectou_reversao_s": 53.0
+        },
+        {
+          "tipo": "inicializacao",
+          "rep": "2",
+          "tag_defeituosa": "sha-345f8307fbfe",
+          "tag_estavel": "sha-f42da05f62d5",
+          "t0": "2026-11-08T20:41:25.000Z",
+          "t1": "2026-11-08T20:46:59.838Z",
+          "t2": "2026-11-08T20:47:06.860Z",
+          "t3": "2026-11-08T20:48:07.162Z",
+          "deteccao_s": 334.8,
+          "reacao_s": 7.0,
+          "reconciliacao_s": 60.3,
+          "total_s": 402.2,
+          "health_publico_durante_falha": 200,
+          "argo_detectou_reversao_s": 56.8
+        },
+        {
+          "tipo": "inicializacao",
+          "rep": "3",
+          "tag_defeituosa": "sha-58c3cf844d94",
+          "tag_estavel": "sha-659921dc0855",
+          "t0": "2026-11-08T20:55:29.000Z",
+          "t1": "2026-11-08T20:59:56.669Z",
+          "t2": "2026-11-08T21:00:02.476Z",
+          "t3": "2026-11-08T21:02:02.102Z",
+          "deteccao_s": 267.7,
+          "reacao_s": 5.8,
+          "reconciliacao_s": 119.6,
+          "total_s": 393.1,
+          "health_publico_durante_falha": 200,
+          "argo_detectou_reversao_s": 116.0
+        }
+      ],
+      "deteccao_s": {
+        "n": 3,
+        "media": 270.6,
+        "min": 209.4,
+        "max": 334.8
+      },
+      "reacao_s": {
+        "n": 3,
+        "media": 6.0,
+        "min": 5.1,
+        "max": 7.0
+      },
+      "reconciliacao_s": {
+        "n": 3,
+        "media": 78.8,
+        "min": 56.6,
+        "max": 119.6
+      },
+      "total_s": {
+        "n": 3,
+        "media": 355.5,
+        "min": 271.1,
+        "max": 402.2
+      },
+      "argo_detectou_reversao_s": {
+        "n": 3,
+        "media": 75.3,
+        "min": 53.0,
+        "max": 116.0
+      },
+      "deteccao_sonda_s": null,
+      "health_publico_durante_falha": [
+        200
+      ]
+    },
+    "funcional": {
+      "repeticoes": [
+        {
+          "tipo": "funcional",
+          "rep": "1",
+          "tag_defeituosa": "sha-88cc2a133c64",
+          "tag_estavel": "sha-c4f915c6ffc6",
+          "t0": "2026-11-08T21:23:45.000Z",
+          "t1": "2026-11-08T21:28:49.732Z",
+          "t2": "2026-11-08T21:28:56.418Z",
+          "t3": "2026-11-08T21:30:18.057Z",
+          "deteccao_s": 304.7,
+          "reacao_s": 6.7,
+          "reconciliacao_s": 81.6,
+          "total_s": 393.1,
+          "health_publico_durante_falha": 200,
+          "detector": "alerta Erros 5xx na API (Grafana Cloud)",
+          "t1_sonda": "2026-11-08T21:24:05.041Z",
+          "deteccao_sonda_s": 20.0,
+          "argo_detectou_reversao_s": 61.5
+        },
+        {
+          "tipo": "funcional",
+          "rep": "2",
+          "tag_defeituosa": "sha-401a59becac7",
+          "tag_estavel": "sha-35d004e918ae",
+          "t0": "2026-11-08T21:37:51.000Z",
+          "t1": "2026-11-08T21:42:45.862Z",
+          "t2": "2026-11-08T21:42:52.846Z",
+          "t3": "2026-11-08T21:44:17.380Z",
+          "deteccao_s": 294.9,
+          "reacao_s": 7.0,
+          "reconciliacao_s": 84.5,
+          "total_s": 386.4,
+          "health_publico_durante_falha": 200,
+          "detector": "alerta Erros 5xx na API (Grafana Cloud)",
+          "t1_sonda": "2026-11-08T21:38:08.672Z",
+          "deteccao_sonda_s": 17.7,
+          "argo_detectou_reversao_s": 67.9
+        },
+        {
+          "tipo": "funcional",
+          "rep": "3",
+          "tag_defeituosa": "sha-65fc683342fb",
+          "tag_estavel": "sha-0690d7642d63",
+          "t0": "2026-11-08T21:51:14.000Z",
+          "t1": "2026-11-08T21:56:46.064Z",
+          "t2": "2026-11-08T21:56:52.879Z",
+          "t3": "2026-11-08T21:59:17.116Z",
+          "deteccao_s": 332.1,
+          "reacao_s": 6.8,
+          "reconciliacao_s": 144.2,
+          "total_s": 483.1,
+          "health_publico_durante_falha": 200,
+          "detector": "alerta Erros 5xx na API (Grafana Cloud)",
+          "t1_sonda": "2026-11-08T21:52:10.262Z",
+          "deteccao_sonda_s": 56.3,
+          "argo_detectou_reversao_s": 124.0
+        }
+      ],
+      "deteccao_s": {
+        "n": 3,
+        "media": 310.6,
+        "min": 294.9,
+        "max": 332.1
+      },
+      "reacao_s": {
+        "n": 3,
+        "media": 6.8,
+        "min": 6.7,
+        "max": 7.0
+      },
+      "reconciliacao_s": {
+        "n": 3,
+        "media": 103.4,
+        "min": 81.6,
+        "max": 144.2
+      },
+      "total_s": {
+        "n": 3,
+        "media": 420.9,
+        "min": 386.4,
+        "max": 483.1
+      },
+      "argo_detectou_reversao_s": {
+        "n": 3,
+        "media": 84.5,
+        "min": 61.5,
+        "max": 124.0
+      },
+      "deteccao_sonda_s": {
+        "n": 3,
+        "media": 31.3,
+        "min": 17.7,
+        "max": 56.3
+      },
+      "health_publico_durante_falha": [
+        200
+      ]
+    }
+  },
+  "linha_base": {
+    "api": {
+      "passos": [
+        {
+          "app": "api",
+          "passo": 1,
+          "descricao": "build da imagem linux/arm64",
+          "inicio": "2026-11-08T19:29:22.015Z",
+          "duracao_s": 15.8
+        },
+        {
+          "app": "api",
+          "passo": 2,
+          "descricao": "transferência da imagem para o nó (docker save | ctr import)",
+          "inicio": "2026-11-08T19:29:37.829Z",
+          "duracao_s": 5.7
+        },
+        {
+          "app": "api",
+          "passo": 3,
+          "descricao": "criação do namespace",
+          "inicio": "2026-11-08T19:29:43.538Z",
+          "duracao_s": 0.3
+        },
+        {
+          "app": "api",
+          "passo": 4,
+          "descricao": "criação do segredo do banco (fora do Git)",
+          "inicio": "2026-11-08T19:29:43.813Z",
+          "duracao_s": 0.3
+        },
+        {
+          "app": "api",
+          "passo": 5,
+          "descricao": "aplicação dos manifestos",
+          "inicio": "2026-11-08T19:29:44.102Z",
+          "duracao_s": 1.4
+        },
+        {
+          "app": "api",
+          "passo": 6,
+          "descricao": "espera do banco",
+          "inicio": "2026-11-08T19:29:45.489Z",
+          "duracao_s": 3.6
+        },
+        {
+          "app": "api",
+          "passo": 7,
+          "descricao": "espera da API",
+          "inicio": "2026-11-08T19:29:49.051Z",
+          "duracao_s": 55.2
+        },
+        {
+          "app": "api",
+          "passo": 8,
+          "descricao": "registro DNS do host (Cloudflare)",
+          "inicio": "2026-11-08T19:30:44.233Z",
+          "duracao_s": 0.0
+        },
+        {
+          "app": "api",
+          "passo": 9,
+          "descricao": "verificação HTTPS",
+          "inicio": "2026-11-08T19:30:44.242Z",
+          "duracao_s": 4.6
+        },
+        {
+          "app": "api",
+          "passo": 10,
+          "descricao": "verificação da telemetria no Grafana",
+          "inicio": "2026-11-08T19:30:48.867Z",
+          "duracao_s": 0.0
+        }
+      ],
+      "n_passos": 10,
+      "duracao_total_s": 86.9,
+      "arquivos": 1,
+      "linhas": 92,
+      "passos_por_nova_versao": 3
+    },
+    "front": {
+      "passos": [
+        {
+          "app": "front",
+          "passo": 1,
+          "descricao": "build da imagem linux/arm64",
+          "inicio": "2026-11-08T19:30:48.906Z",
+          "duracao_s": 2.5
+        },
+        {
+          "app": "front",
+          "passo": 2,
+          "descricao": "transferência da imagem para o nó (docker save | ctr import)",
+          "inicio": "2026-11-08T19:30:51.460Z",
+          "duracao_s": 5.3
+        },
+        {
+          "app": "front",
+          "passo": 3,
+          "descricao": "aplicação dos manifestos",
+          "inicio": "2026-11-08T19:30:56.724Z",
+          "duracao_s": 1.1
+        },
+        {
+          "app": "front",
+          "passo": 4,
+          "descricao": "espera do frontend",
+          "inicio": "2026-11-08T19:30:57.852Z",
+          "duracao_s": 1.5
+        },
+        {
+          "app": "front",
+          "passo": 5,
+          "descricao": "registro DNS do host (Cloudflare)",
+          "inicio": "2026-11-08T19:30:59.323Z",
+          "duracao_s": 0.0
+        },
+        {
+          "app": "front",
+          "passo": 6,
+          "descricao": "verificação HTTPS",
+          "inicio": "2026-11-08T19:30:59.333Z",
+          "duracao_s": 2.3
+        }
+      ],
+      "n_passos": 6,
+      "duracao_total_s": 12.8,
+      "arquivos": 1,
+      "linhas": 46,
+      "passos_por_nova_versao": 3
+    }
+  },
+  "plataforma_esforco": {
+    "catalogo-api": {
+      "arquivos": 9,
+      "linhas": 268,
+      "arquivos_fora_de_apps": 0,
+      "n_passos": 5,
+      "passos_por_nova_versao": 1,
+      "lista": [
+        "tcc-platform/apps/catalogo-api/base/deployment.yaml",
+        "tcc-platform/apps/catalogo-api/base/externalsecret.yaml",
+        "tcc-platform/apps/catalogo-api/base/kustomization.yaml",
+        "tcc-platform/apps/catalogo-api/base/postgres.yaml",
+        "tcc-platform/apps/catalogo-api/hml/deployment.yaml",
+        "tcc-platform/apps/catalogo-api/hml/kustomization.yaml",
+        "tcc-platform/apps/catalogo-api/prd/deployment.yaml",
+        "tcc-platform/apps/catalogo-api/prd/kustomization.yaml",
+        "catalogo-api/.github/workflows/ci.yml"
+      ]
+    },
+    "catalogo-front": {
+      "arquivos": 7,
+      "linhas": 117,
+      "arquivos_fora_de_apps": 0,
+      "n_passos": 4,
+      "passos_por_nova_versao": 1,
+      "lista": [
+        "tcc-platform/apps/catalogo-front/base/deployment.yaml",
+        "tcc-platform/apps/catalogo-front/base/kustomization.yaml",
+        "tcc-platform/apps/catalogo-front/hml/deployment.yaml",
+        "tcc-platform/apps/catalogo-front/hml/kustomization.yaml",
+        "tcc-platform/apps/catalogo-front/prd/deployment.yaml",
+        "tcc-platform/apps/catalogo-front/prd/kustomization.yaml",
+        "catalogo-front/.github/workflows/ci.yml"
+      ]
+    }
+  },
+  "padronizacao": {
+    "ambiente": "hml",
+    "apps": {
+      "catalogo-api": {
+        "arquivos_da_app": [
+          {
+            "arquivo": "apps/catalogo-api/base/deployment.yaml",
+            "linhas": 34
+          },
+          {
+            "arquivo": "apps/catalogo-api/base/externalsecret.yaml",
+            "linhas": 22
+          },
+          {
+            "arquivo": "apps/catalogo-api/base/kustomization.yaml",
+            "linhas": 12
+          },
+          {
+            "arquivo": "apps/catalogo-api/base/postgres.yaml",
+            "linhas": 97
+          },
+          {
+            "arquivo": "apps/catalogo-api/hml/deployment.yaml",
+            "linhas": 14
+          },
+          {
+            "arquivo": "apps/catalogo-api/hml/kustomization.yaml",
+            "linhas": 28
+          }
+        ],
+        "linhas_escritas": 207,
+        "linhas_renderizadas": 341,
+        "razao_escritas_renderizadas": 0.607,
+        "recursos_renderizados": [
+          "Deployment",
+          "ExternalSecret",
+          "ExternalSecret",
+          "HTTPRoute",
+          "NetworkPolicy",
+          "Service",
+          "Service",
+          "ServiceAccount",
+          "StatefulSet"
+        ],
+        "checklist": {
+          "liveness": true,
+          "readiness": true,
+          "startup": true,
+          "requests": true,
+          "limits": true,
+          "nao_root": true,
+          "sem_escalonamento": true,
+          "raiz_somente_leitura": true,
+          "sem_capabilities": true,
+          "seccomp": true,
+          "sem_token_sa": true,
+          "otel_endpoint": true,
+          "otel_ambiente": true,
+          "imagem_por_digest": true,
+          "rolling_sem_indisponibilidade": true,
+          "httproute_https": true,
+          "networkpolicy_metadados": true,
+          "pull_secret_do_vault": true
+        },
+        "conformidade": "18/18"
+      },
+      "catalogo-front": {
+        "arquivos_da_app": [
+          {
+            "arquivo": "apps/catalogo-front/base/deployment.yaml",
+            "linhas": 23
+          },
+          {
+            "arquivo": "apps/catalogo-front/base/kustomization.yaml",
+            "linhas": 10
+          },
+          {
+            "arquivo": "apps/catalogo-front/hml/deployment.yaml",
+            "linhas": 14
+          },
+          {
+            "arquivo": "apps/catalogo-front/hml/kustomization.yaml",
+            "linhas": 18
+          }
+        ],
+        "linhas_escritas": 65,
+        "linhas_renderizadas": 193,
+        "razao_escritas_renderizadas": 0.337,
+        "recursos_renderizados": [
+          "Deployment",
+          "ExternalSecret",
+          "HTTPRoute",
+          "NetworkPolicy",
+          "Service",
+          "ServiceAccount"
+        ],
+        "checklist": {
+          "liveness": true,
+          "readiness": true,
+          "startup": true,
+          "requests": true,
+          "limits": true,
+          "nao_root": true,
+          "sem_escalonamento": true,
+          "raiz_somente_leitura": true,
+          "sem_capabilities": true,
+          "seccomp": true,
+          "sem_token_sa": true,
+          "otel_endpoint": true,
+          "otel_ambiente": true,
+          "imagem_por_digest": true,
+          "rolling_sem_indisponibilidade": true,
+          "httproute_https": true,
+          "networkpolicy_metadados": true,
+          "pull_secret_do_vault": true
+        },
+        "conformidade": "18/18"
+      }
+    },
+    "deployment": {
+      "campos_total": 63,
+      "campos_iguais": 41,
+      "campos_divergentes": 22,
+      "divergentes": [
+        "metadata.labels.app.kubernetes.io/name",
+        "metadata.namespace",
+        "spec.template.spec.containers[app].env[API_BASE_URL].name",
+        "spec.template.spec.containers[app].env[API_BASE_URL].value",
+        "spec.template.spec.containers[app].env[ConnectionStrings__Catalogo].name",
+        "spec.template.spec.containers[app].env[ConnectionStrings__Catalogo].valueFrom.secretKeyRef.key",
+        "spec.template.spec.containers[app].env[ConnectionStrings__Catalogo].valueFrom.secretKeyRef.name",
+        "spec.template.spec.containers[app].env[Cors__OrigensPermitidas].name",
+        "spec.template.spec.containers[app].env[Cors__OrigensPermitidas].value",
+        "spec.template.spec.containers[app].env[OTEL_SERVICE_NAME].name",
+        "spec.template.spec.containers[app].env[OTEL_SERVICE_NAME].value",
+        "spec.template.spec.containers[app].image",
+        "spec.template.spec.containers[app].livenessProbe.httpGet.path",
+        "spec.template.spec.containers[app].readinessProbe.httpGet.path",
+        "spec.template.spec.containers[app].resources.limits.cpu",
+        "spec.template.spec.containers[app].resources.limits.memory",
+        "spec.template.spec.containers[app].resources.requests.cpu",
+        "spec.template.spec.containers[app].resources.requests.memory",
+        "spec.template.spec.containers[app].startupProbe.httpGet.path",
+        "spec.template.spec.containers[app].volumeMounts[nginx-cache].mountPath",
+        "spec.template.spec.containers[app].volumeMounts[nginx-cache].name",
+        "spec.template.spec.volumes[nginx-cache].name"
+      ]
+    },
+    "golden_path_base_linhas_renderizadas": 173
+  },
+  "overhead": {
+    "sem_apps": {
+      "_no": {
+        "cpu_m": 235.9,
+        "mem_mi": 5173.2,
+        "amostras": 20
+      },
+      "argocd": {
+        "cpu_m": 18.8,
+        "mem_mi": 393.7,
+        "amostras": 20
+      },
+      "catalogo-api-hml": {
+        "cpu_m": 4.5,
+        "mem_mi": 24,
+        "amostras": 20
+      },
+      "catalogo-api-prd": {
+        "cpu_m": 4.1,
+        "mem_mi": 26,
+        "amostras": 20
+      },
+      "catalogo-front-hml": {
+        "cpu_m": 0,
+        "mem_mi": 0,
+        "amostras": 1
+      },
+      "cert-manager": {
+        "cpu_m": 3.1,
+        "mem_mi": 153.1,
+        "amostras": 20
+      },
+      "default": {
+        "cpu_m": 0,
+        "mem_mi": 0,
+        "amostras": 1
+      },
+      "external-secrets": {
+        "cpu_m": 4.7,
+        "mem_mi": 109.0,
+        "amostras": 20
+      },
+      "kong": {
+        "cpu_m": 6.3,
+        "mem_mi": 434.2,
+        "amostras": 20
+      },
+      "kube-system": {
+        "cpu_m": 8.2,
+        "mem_mi": 106.5,
+        "amostras": 20
+      },
+      "monitoring": {
+        "cpu_m": 40.1,
+        "mem_mi": 1174.3,
+        "amostras": 20
+      },
+      "reloader": {
+        "cpu_m": 1,
+        "mem_mi": 13,
+        "amostras": 20
+      }
+    },
+    "com_apps_carga": {
+      "_no": {
+        "cpu_m": 420.6,
+        "mem_mi": 4966.1,
+        "amostras": 20
+      },
+      "argocd": {
+        "cpu_m": 39.2,
+        "mem_mi": 316.2,
+        "amostras": 20
+      },
+      "catalogo-api-hml": {
+        "cpu_m": 110.2,
+        "mem_mi": 126.3,
+        "amostras": 20
+      },
+      "catalogo-api-prd": {
+        "cpu_m": 24.6,
+        "mem_mi": 50,
+        "amostras": 20
+      },
+      "catalogo-front-hml": {
+        "cpu_m": 1.9,
+        "mem_mi": 3,
+        "amostras": 20
+      },
+      "catalogo-front-prd": {
+        "cpu_m": 2,
+        "mem_mi": 3,
+        "amostras": 4
+      },
+      "cert-manager": {
+        "cpu_m": 3.2,
+        "mem_mi": 153.1,
+        "amostras": 20
+      },
+      "external-secrets": {
+        "cpu_m": 3.6,
+        "mem_mi": 103.5,
+        "amostras": 20
+      },
+      "kong": {
+        "cpu_m": 29.5,
+        "mem_mi": 449.8,
+        "amostras": 20
+      },
+      "kube-system": {
+        "cpu_m": 8.8,
+        "mem_mi": 107,
+        "amostras": 20
+      },
+      "monitoring": {
+        "cpu_m": 44.1,
+        "mem_mi": 1235.2,
+        "amostras": 20
+      },
+      "reloader": {
+        "cpu_m": 1,
+        "mem_mi": 13.1,
+        "amostras": 20
+      }
+    }
+  },
+  "observabilidade": {
+    "fonte": "consultas ao Grafana Cloud",
+    "carga": "API: 6355 requisições, 0% de falhas e p95 de 52 ms; frontend: 3 usuários virtuais",
+    "matriz": [
+      {
+        "sinal": "Métricas de contêiner (CPU, memória)",
+        "api": "Presente",
+        "front": "Presente",
+        "origem": "cAdvisor via Alloy → Mimir"
+      },
+      {
+        "sinal": "Estado do Deployment",
+        "api": "Presente",
+        "front": "Presente",
+        "origem": "kube-state-metrics → Mimir"
+      },
+      {
+        "sinal": "Logs do contêiner",
+        "api": "Presente",
+        "front": "Presente",
+        "origem": "arquivos de log via Alloy → Loki"
+      },
+      {
+        "sinal": "Métricas HTTP da aplicação",
+        "api": "Presente",
+        "front": "Não se aplica",
+        "origem": "SDK OTel via OTLP → Mimir"
+      },
+      {
+        "sinal": "Traces",
+        "api": "Presente",
+        "front": "Não se aplica",
+        "origem": "SDK OTel via OTLP → Tempo"
+      },
+      {
+        "sinal": "Verificação sintética",
+        "api": "Presente",
+        "front": "Presente",
+        "origem": "Synthetic Monitoring → Mimir"
+      }
+    ],
+    "texto_primeiro_dado": "Os sinais de contêiner (métricas e logs) estão disponíveis para as duas aplicações desde o primeiro pod, porque são coletados pelo Alloy em todo o cluster; o intervalo até o primeiro dado é o de coleta, de 60 segundos para métricas e quase imediato para logs. Os traces e as métricas HTTP da API chegam pelo receptor OTLP, com o lote de traces exportado a cada 5 segundos e as métricas a cada 60 segundos, conforme os padrões do SDK. O frontend não emite traces nem métricas HTTP próprias, por não ter instrumentação no navegador. A matriz foi verificada por consultas ao Grafana Cloud."
+  },
+  "esteira": {
+    "publicacoes": 26,
+    "barradas": 2,
+    "descricao_barradas": "uma pelos testes de integração, por um erro no tipo de conteúdo das respostas de validação; uma pelo Trivy, por uma vulnerabilidade crítica com correção disponível na imagem base do nginx",
+    "execucoes": [
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:59:50Z",
+        "databaseId": 42527944791,
+        "displayTitle": "Revert \"experimento: falha funcional (3)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:49:21Z",
+        "databaseId": 42527102074,
+        "displayTitle": "experimento: falha funcional (3)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:44:51Z",
+        "databaseId": 42526728821,
+        "displayTitle": "Revert \"experimento: falha funcional (2)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:36:27Z",
+        "databaseId": 42526054652,
+        "displayTitle": "experimento: falha funcional (2)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:30:52Z",
+        "databaseId": 42525579069,
+        "displayTitle": "Revert \"experimento: falha funcional (1)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:22:20Z",
+        "databaseId": 42524872589,
+        "displayTitle": "experimento: falha funcional (1)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:16:45Z",
+        "databaseId": 42524389378,
+        "displayTitle": "Revert \"experimento: falha funcional (1)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:08:29Z",
+        "databaseId": 42523679526,
+        "displayTitle": "experimento: falha funcional (1)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T21:02:35Z",
+        "databaseId": 42523150950,
+        "displayTitle": "Revert \"experimento: falha inicializacao (3)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:53:19Z",
+        "databaseId": 42522380300,
+        "displayTitle": "experimento: falha inicializacao (3)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:48:40Z",
+        "databaseId": 42522001130,
+        "displayTitle": "Revert \"experimento: falha inicializacao (2)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:39:17Z",
+        "databaseId": 42521219518,
+        "displayTitle": "experimento: falha inicializacao (2)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:34:39Z",
+        "databaseId": 42520833032,
+        "displayTitle": "Revert \"experimento: falha inicializacao (1)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:27:33Z",
+        "databaseId": 42520216007,
+        "displayTitle": "experimento: falha inicializacao (1)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:22:00Z",
+        "databaseId": 42519752692,
+        "displayTitle": "Revert \"experimento: falha inicializacao (1)\"",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:00:16Z",
+        "databaseId": 42517840379,
+        "displayTitle": "experimento: falha inicializacao (1)",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:49:19Z",
+        "databaseId": 42516947750,
+        "displayTitle": "experimento: implantação 3",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:46:25Z",
+        "databaseId": 42516705773,
+        "displayTitle": "experimento: implantação 2",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:38:49Z",
+        "databaseId": 42516072153,
+        "displayTitle": "OpenAPI: enums declarados como string",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:23:55Z",
+        "databaseId": 42514838473,
+        "displayTitle": "Corrige content-type dos 400 e o teste de telemetria",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "failure",
+        "createdAt": "2026-11-08T19:20:46Z",
+        "databaseId": 42514569378,
+        "displayTitle": "Marca as histórias dos épicos 1 e 2 como concluídas",
+        "event": "push",
+        "app": "catalogo-api"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:49:19Z",
+        "databaseId": 42516947701,
+        "displayTitle": "experimento: implantação 3",
+        "event": "push",
+        "app": "catalogo-front"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:46:25Z",
+        "databaseId": 42516706540,
+        "displayTitle": "experimento: implantação 2",
+        "event": "push",
+        "app": "catalogo-front"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:40:04Z",
+        "databaseId": 42516174011,
+        "displayTitle": "Troca o OpenAPI escrito à mão pelo gerado pela catalogo-api",
+        "event": "push",
+        "app": "catalogo-front"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-08T19:24:54Z",
+        "databaseId": 42514918861,
+        "displayTitle": "Atualiza os pacotes da imagem base do nginx no build",
+        "event": "push",
+        "app": "catalogo-front"
+      },
+      {
+        "conclusion": "failure",
+        "createdAt": "2026-11-08T19:18:29Z",
+        "databaseId": 42514366456,
+        "displayTitle": "Não publica o config.example.json no build",
+        "event": "push",
+        "app": "catalogo-front"
+      }
+    ]
+  },
+  "colega": null,
+  "falhas_na_esteira": [],
+  "dns_curinga": true,
+  "grafana": {
+    "alertas": true,
+    "sinteticos": true,
+    "sinteticos_frequencia_s": 300,
+    "pontos_de_prova": 1
+  }
+}

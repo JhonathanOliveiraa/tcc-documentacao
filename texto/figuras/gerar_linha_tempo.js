@@ -23,12 +23,13 @@ function painel(tipo, titulo, y0) {
   const t0 = Date.parse(ev.t0), tf = Date.parse(ev.t3) + 30000;
   const ti = Math.min(t0 - 30000, linhas[0].t);
   const pts = linhas.filter(l => l.t >= ti && l.t <= tf);
+  const estavel = linhas[0].img;   // o episódio começa na versão estável (prefixo do digest)
   const X = t => ESQ + (t - ti) / (tf - ti) * (W - ESQ - DIR);
   txt(20, y0 + 24, titulo, { b: true, tam: 22 });
   const faixas = [
     ["HTTP GET /produtos", l => l.code === 200 ? [COR.ok, "200"] : l.code >= 500 ? [COR.erro, String(l.code)] : [COR.neutro, String(l.code || "—")]],
     ["Argo CD (health)", l => [{ Healthy: COR.ok, Progressing: COR.aviso, Degraded: COR.erro }[l.health] || COR.neutro, l.health]],
-    ["Imagem em execução", l => [l.img.includes(ev.tag_defeituosa.slice(4)) || l.img === ev.tag_defeituosa ? COR.def : COR.est, l.img.includes(ev.tag_defeituosa.slice(4)) ? "defeituosa" : "estável"]],
+    ["Imagem no Deployment", l => l.img === estavel ? [COR.est, "estável"] : [COR.def, "defeituosa"]],
   ];
   faixas.forEach(([nome, f], i) => {
     const y = y0 + 50 + i * 60;
@@ -53,11 +54,12 @@ function painel(tipo, titulo, y0) {
 }
 
 painel("inicializacao", "(a) Falha de inicialização: a versão defeituosa nunca recebe tráfego", TOPO);
-painel("funcional", "(b) Falha funcional: a versão entra no ar e só a verificação externa detecta", TOPO + PAINEL + 30);
+if (eventos.some(e => e.tipo === "funcional" && String(e.rep) === REP))
+  painel("funcional", "(b) Falha funcional: a versão entra no ar e só o alerta de erros 5xx detecta", TOPO + PAINEL + 30);
 const yl = TOPO + 2 * PAINEL + 50;
 [[COR.ok, "200 / Healthy"], [COR.erro, "5xx / Degraded"], [COR.aviso, "Progressing"], [COR.est, "imagem estável"], [COR.def, "imagem defeituosa"]]
   .forEach(([c, n], i) => { els.push(`<rect x="${ESQ + i * 270}" y="${yl}" width="26" height="20" fill="${c}"/>`); txt(ESQ + i * 270 + 34, yl + 16, n, { tam: 17 }); });
-txt(ESQ, yl + 50, "t0: commit da versão defeituosa no overlay · t1: detecção · t2: commit de reversão · t3: versão estável no ar e respondendo 200", { tam: 16 });
+txt(ESQ, yl + 50, "t0: commit da versão defeituosa no overlay · t1: detecção (Argo CD Degraded / alerta de 5xx) · t2: commit de reversão · t3: versão estável no ar e respondendo 200", { tam: 16 });
 
 const H = yl + 70;
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" font-family="Arial"><rect width="100%" height="100%" fill="#fff"/>${els.join("")}</svg>`;

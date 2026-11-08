@@ -1,0 +1,18 @@
+{"app":"api","passo":1,"descricao":"build da imagem linux/arm64","inicio":"2026-11-08T19:29:22.015Z","duracao_s":15.8}
+{"app":"api","passo":2,"descricao":"transferência da imagem para o nó (docker save | ctr import)","inicio":"2026-11-08T19:29:37.829Z","duracao_s":5.7}
+{"app":"api","passo":3,"descricao":"criação do namespace","inicio":"2026-11-08T19:29:43.538Z","duracao_s":0.3}
+{"app":"api","passo":4,"descricao":"criação do segredo do banco (fora do Git)","inicio":"2026-11-08T19:29:43.813Z","duracao_s":0.3}
+{"app":"api","passo":5,"descricao":"aplicação dos manifestos","inicio":"2026-11-08T19:29:44.102Z","duracao_s":1.4}
+{"app":"api","passo":6,"descricao":"espera do banco","inicio":"2026-11-08T19:29:45.489Z","duracao_s":3.6}
+{"app":"api","passo":7,"descricao":"espera da API","inicio":"2026-11-08T19:29:49.051Z","duracao_s":55.2}
+{"app":"api","passo":8,"descricao":"registro DNS do host (Cloudflare)","inicio":"2026-11-08T19:30:44.233Z","duracao_s":0.0}
+{"app":"api","passo":9,"descricao":"verificação HTTPS","inicio":"2026-11-08T19:30:44.242Z","duracao_s":4.6}
+{"app":"api","passo":10,"descricao":"verificação da telemetria no Grafana","inicio":"2026-11-08T19:30:48.867Z","duracao_s":0.0}
+{"app":"api","passo":"total","passos":10,"duracao_s":86.9}
+{"app":"front","passo":1,"descricao":"build da imagem linux/arm64","inicio":"2026-11-08T19:30:48.906Z","duracao_s":2.5}
+{"app":"front","passo":2,"descricao":"transferência da imagem para o nó (docker save | ctr import)","inicio":"2026-11-08T19:30:51.460Z","duracao_s":5.3}
+{"app":"front","passo":3,"descricao":"aplicação dos manifestos","inicio":"2026-11-08T19:30:56.724Z","duracao_s":1.1}
+{"app":"front","passo":4,"descricao":"espera do frontend","inicio":"2026-11-08T19:30:57.852Z","duracao_s":1.5}
+{"app":"front","passo":5,"descricao":"registro DNS do host (Cloudflare)","inicio":"2026-11-08T19:30:59.323Z","duracao_s":0.0}
+{"app":"front","passo":6,"descricao":"verificação HTTPS","inicio":"2026-11-08T19:30:59.333Z","duracao_s":2.3}
+{"app":"front","passo":"total","passos":6,"duracao_s":12.8}

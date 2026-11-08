@@ -127,6 +127,20 @@ def esperar_no_ar(app, tag, revisao=None):
     return aguardar(cond, 1800, 3, "no ar")
 
 
+def alerta_5xx():
+    """True se o alerta "Erros 5xx na API" estiver disparando para hml no Grafana Cloud."""
+    token = (pathlib.Path.home() / ".config" / "tcc-grafana-token").read_text().strip()
+    req = urllib.request.Request("https://altasistemas.grafana.net/api/prometheus/grafana/api/v1/alerts",
+                                 headers={"Authorization": f"Bearer {token}"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            alertas = json.loads(r.read())["data"]["alerts"]
+    except Exception:
+        return False
+    return any(a["labels"].get("alertname") == "Erros 5xx na API" and a["state"].lower() == "alerting"
+               and a["labels"].get("deployment_environment", "hml") == "hml" for a in alertas)
+
+
 def git_commit_push(repo, msg, allow_empty=False):
     cwd = WS / repo
     sh("git", "pull", "-q", "--rebase", "--autostash", cwd=cwd)
@@ -219,18 +233,24 @@ def falha(tipo, rep):
     assert run["conclusion"] == "success", run["conclusion"]
     psha, t0 = commit_plataforma(app, tag)
 
-    # t1: detecção
+    # t1: detecção. Inicialização: Argo CD Degraded. Funcional: disparo do alerta "Erros 5xx na API"
+    # no Grafana Cloud (a sonda do script registra só o primeiro 500, como referência).
+    marcos = {}
     def detectou():
         e = estado(app)
         if tipo == "inicializacao":
             return agora() if (tag in e["imagem"] and e["health"] == "Degraded") else None
-        return agora() if (tag in e["imagem"] and e["rollout_completo"] and http(URL[app][1]) == 500) else None
-    t1 = aguardar(detectou, 1200, 3, "detecção")
+        if tag in e["imagem"] and e["rollout_completo"] and "sonda" not in marcos and http(URL[app][1]) == 500:
+            marcos["sonda"] = agora()
+        if "sonda" in marcos and alerta_5xx():
+            return agora()
+        return None
+    t1 = aguardar(detectou, 1500, 3, "detecção")
     disponivel_durante = http(URL[app][0])
 
     # t2: reversão do commit da esteira no repositório da plataforma
     plat = WS / "tcc-platform"
-    sh("git", "pull", "-q", "--rebase", cwd=plat)
+    sh("git", "pull", "-q", "--rebase", "--autostash", cwd=plat)
     sh("git", "revert", "--no-edit", psha, cwd=plat)
     sh("git", "push", "-q", "origin", "main", cwd=plat)
     t2 = agora()
@@ -244,6 +264,9 @@ def falha(tipo, rep):
         "deteccao_s": duracao(t0, t1), "reacao_s": duracao(t1, t2),
         "reconciliacao_s": duracao(t2, t3), "total_s": duracao(t0, t3),
         "health_publico_durante_falha": disponivel_durante,
+        "detector": "Argo CD (Degraded)" if tipo == "inicializacao" else "alerta Erros 5xx na API (Grafana Cloud)",
+        "t1_sonda": iso(marcos["sonda"]) if "sonda" in marcos else None,
+        "deteccao_sonda_s": duracao(t0, marcos["sonda"]) if "sonda" in marcos else None,
         "argo_detectou_reversao_s": duracao(t2, m.get("argo_detectou", t3)),
     }
     time.sleep(30)

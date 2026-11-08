@@ -1,0 +1,43 @@
+{
+  "fonte": "consultas ao Grafana Cloud",
+  "carga": "API: 6355 requisições, 0% de falhas e p95 de 52 ms; frontend: 3 usuários virtuais",
+  "matriz": [
+    {
+      "sinal": "Métricas de contêiner (CPU, memória)",
+      "api": "Presente",
+      "front": "Presente",
+      "origem": "cAdvisor via Alloy → Mimir"
+    },
+    {
+      "sinal": "Estado do Deployment",
+      "api": "Presente",
+      "front": "Presente",
+      "origem": "kube-state-metrics → Mimir"
+    },
+    {
+      "sinal": "Logs do contêiner",
+      "api": "Presente",
+      "front": "Presente",
+      "origem": "arquivos de log via Alloy → Loki"
+    },
+    {
+      "sinal": "Métricas HTTP da aplicação",
+      "api": "Presente",
+      "front": "Não se aplica",
+      "origem": "SDK OTel via OTLP → Mimir"
+    },
+    {
+      "sinal": "Traces",
+      "api": "Presente",
+      "front": "Não se aplica",
+      "origem": "SDK OTel via OTLP → Tempo"
+    },
+    {
+      "sinal": "Verificação sintética",
+      "api": "Presente",
+      "front": "Presente",
+      "origem": "Synthetic Monitoring → Mimir"
+    }
+  ],
+  "texto_primeiro_dado": "Os sinais de contêiner (métricas e logs) estão disponíveis para as duas aplicações desde o primeiro pod, porque são coletados pelo Alloy em todo o cluster; o intervalo até o primeiro dado é o de coleta, de 60 segundos para métricas e quase imediato para logs. Os traces e as métricas HTTP da API chegam pelo receptor OTLP, com o lote de traces exportado a cada 5 segundos e as métricas a cada 60 segundos, conforme os padrões do SDK. O frontend não emite traces nem métricas HTTP próprias, por não ter instrumentação no navegador. A matriz foi verificada por consultas ao Grafana Cloud."
+}

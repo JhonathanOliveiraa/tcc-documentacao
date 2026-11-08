@@ -5,7 +5,7 @@ module.exports = (H, R) => {
   const exigir = (v, nome) => { if (v === undefined || v === null) throw new Error("resultado ausente: " + nome); return v; };
   const num = (x, casas = 1) => Number(x).toFixed(casas).replace(".", ",");
   const seg = (s) => s >= 120 ? `${num(s / 60)} min` : `${num(s, 0)} s`;
-  const mmm = (r, nome) => { exigir(r, nome); return [seg(r.media), seg(r.min), seg(r.max)]; };
+  const mmm = (r, nome) => { exigir(r, nome); return [num(r.media, 0), num(r.min, 0), num(r.max, 0)]; };
   const pct = (a, b) => num(100 * a / b, 0) + "%";
 
   const IMP = exigir(R.implantacao, "implantacao");
@@ -18,7 +18,7 @@ module.exports = (H, R) => {
   const EST = exigir(R.esteira, "esteira");
 
   t.push(h1("5", "RESULTADOS E DISCUSSÃO"));
-  t.push(p("Este capítulo apresenta a avaliação da plataforma conforme o protocolo do Apêndice D, executado entre 8 e 9 de novembro de 2026. São apresentadas as aplicações de validação, o esforço e o tempo de implantação, a padronização, a observabilidade obtida, os experimentos de falha e recuperação, o consumo de recursos da plataforma e a verificação dos requisitos, seguidos da discussão e das limitações. Os dados brutos e os scripts de coleta estão no diretório experimento/ do repositório tcc-documentacao."));
+  t.push(p("Este capítulo apresenta a avaliação da plataforma conforme o protocolo do Apêndice D, executado em 8 de novembro de 2026. São apresentadas as aplicações de validação, o esforço e o tempo de implantação, a padronização, a observabilidade obtida, os experimentos de falha e recuperação, o consumo de recursos da plataforma e a verificação dos requisitos, seguidos da discussão e das limitações. Os dados brutos e os scripts de coleta estão no diretório experimento/ do repositório tcc-documentacao."));
 
   // 5.1
   t.push(h2("5.1", "Aplicações de validação"));
@@ -48,7 +48,7 @@ module.exports = (H, R) => {
   t.push(fonte("Fonte: elaborado pelo autor (Apêndice D, etapas 1 e 2)."));
   t.push(p(`Os números de arquivos e linhas da plataforma são maiores que os da linha de base, e não menores. Isso ocorre porque os manifestos manuais, escritos para o mínimo funcional, não incluem o que o template agrega: sondas de inicialização, limites de recursos, contexto de segurança, NetworkPolicy, segredos vindos do cofre e o ambiente de produção. Com o Golden Path, essas linhas não são escritas pela aplicação — vêm do template — e as que a aplicação escreve são majoritariamente declarações de suas particularidades. O ganho está nos passos: depois do onboarding, publicar uma nova versão custa um único passo (git push) contra ${LB.api.passos_por_nova_versao} passos manuais, sem credenciais do cluster e com rastro no Git. A linha de base também expôs um erro típico da configuração manual: sem sonda de inicialização, o contêiner manual da API foi reiniciado pela liveness durante as migrações do banco, o que não ocorre com o template.`));
   t.push(p("A Tabela 2 apresenta o tempo de implantação de uma mudança — correspondente ao lead time das métricas DORA —, do push do commit até a aplicação Healthy no Argo CD e respondendo 200 por HTTPS, em três repetições por aplicação. O tempo é decomposto na esteira de integração contínua (do push ao commit no overlay) e na reconciliação (do commit no overlay à aplicação no ar)."));
-  t.push(legendaTabela("Tabela 2 – Tempo de implantação de uma mudança (3 repetições)"));
+  t.push(legendaTabela("Tabela 2 – Tempo de implantação de uma mudança, em segundos (3 repetições)"));
   t.push(tabela(["Etapa", "API média", "API mín.", "API máx.", "Front média", "Front mín.", "Front máx."], [
     ["Esteira (push → commit no overlay)", ...mmm(API.esteira_s, "api.esteira"), ...mmm(FRONT.esteira_s, "front.esteira")],
     ["  dos quais: testes", ...mmm(API.testes_s, "api.testes"), ...mmm(FRONT.testes_s, "front.testes")],
@@ -58,7 +58,13 @@ module.exports = (H, R) => {
     ["**Total (push → no ar)**", ...mmm(API.total_s, "api.total"), ...mmm(FRONT.total_s, "front.total")],
   ], [34, 11, 11, 11, 11, 11, 11]));
   t.push(fonte("Fonte: elaborado pelo autor (Apêndice D, etapa 2)."));
-  t.push(p(`O tempo total ficou entre ${seg(Math.min(API.total_s.min, FRONT.total_s.min))} e ${seg(Math.max(API.total_s.max, FRONT.total_s.max))}. Duas parcelas dominam: a esteira, cuja maior parte é o build com as duas análises do Trivy e, na API, os testes de integração; e a detecção da mudança pelo Argo CD, que consulta o Git a cada três minutos e responde por quase toda a reconciliação. Em tempo de máquina, a linha de base manual foi mais rápida (${seg(LB.api.duracao_total_s)} para a API e ${seg(LB.front.duracao_total_s)} para o frontend, executando comandos já prontos), porque não testa, não analisa vulnerabilidades e não espera a consulta ao Git. A plataforma troca, portanto, alguns minutos de espera por verificações automáticas e pela ausência de trabalho manual; a espera do Argo CD pode ser eliminada com um webhook do repositório, o que exigiria expor o endpoint do Argo CD à internet e foi deixado como trabalho futuro.`));
+  t.push(p(`O tempo total ficou entre ${seg(Math.min(API.total_s.min, FRONT.total_s.min))} e ${seg(Math.max(API.total_s.max, FRONT.total_s.max))}. Duas parcelas dominam: a esteira, cuja maior parte é o build com as duas análises do Trivy e, na API, os testes de integração; e a detecção da mudança pelo Argo CD, que consulta o Git periodicamente (a cada 60 segundos, após o ajuste discutido na Seção 5.8) e responde pela maior parte da reconciliação. Em tempo de máquina, a linha de base manual foi mais rápida (${seg(LB.api.duracao_total_s)} para a API e ${seg(LB.front.duracao_total_s)} para o frontend, executando comandos já prontos), porque não testa, não analisa vulnerabilidades e não espera a consulta ao Git. A plataforma troca, portanto, alguns minutos de espera por verificações automáticas e pela ausência de trabalho manual; a espera do Argo CD pode ser eliminada com um webhook do repositório, o que exigiria expor o endpoint do Argo CD à internet e foi deixado como trabalho futuro.`));
+  if (R.colega) {
+    const C = R.colega;
+    t.push(p(`Para mitigar o viés do avaliador (Seção 3.6), ${C.quem} incorporou ${C.aplicacao} seguindo apenas o guia docs/ONBOARDING.md, sem ajuda do autor${C.ajudas ? ", exceto em " + C.ajudas : ""}. O onboarding levou ${C.tempo_min} minutos e ${C.passos} passos, ${C.arquivos_fora === 0 ? "sem alteração em arquivos fora de apps/<aplicação>" : C.arquivos_fora + " alterações fora de apps/<aplicação>, registradas como falha do Golden Path"}. ${C.observacoes}`));
+  } else {
+    t.push(p("O teste de onboarding por uma pessoa sem contato prévio com a plataforma, apenas com o guia docs/ONBOARDING.md, não foi realizado nesta versão do trabalho; os números desta seção refletem, portanto, a execução pelo próprio autor, com as ameaças à validade discutidas na Seção 3.6."));
+  }
   t.push(p(`As verificações da esteira mostraram efeito já nas primeiras publicações: das ${EST.publicacoes} execuções da esteira na avaliação, ${EST.barradas} foram interrompidas antes de chegar ao cluster — ${EST.descricao_barradas}. Nenhuma dessas versões foi implantada, e a taxa de falha de mudança das versões que chegaram ao cluster, excluídos os defeitos injetados de propósito na Seção 5.5, foi de zero.`));
 
   // 5.3
@@ -83,13 +89,14 @@ module.exports = (H, R) => {
   t.push(tabela(["Sinal", "catalogo-api", "catalogo-front", "Origem"], OBS.matriz.map(l => [l.sinal, l.api, l.front, l.origem]), [30, 18, 18, 34]));
   t.push(fonte("Fonte: elaborado pelo autor."));
   t.push(p(OBS.texto_primeiro_dado));
-  t.push(...figura("Figura 7 – Trace de uma requisição de listagem na API, com os spans do ASP.NET Core e do Entity Framework Core", "figura7-trace.png", "Fonte: Grafana Cloud, capturado pelo autor."));
+  t.push(p("A Figura 7 mostra um trace de uma listagem durante a carga: o span do servidor HTTP (ASP.NET Core) contém os dois spans de banco gerados pelo Entity Framework Core — a contagem do total e a consulta da página —, o que permite atribuir a latência de cada requisição à aplicação ou ao banco."));
+  t.push(...figura("Figura 7 – Trace de uma requisição GET /produtos com as consultas ao PostgreSQL", "figura7-trace.png", "Fonte: Grafana Cloud, capturado pelo autor."));
 
   // 5.5
   t.push(h2("5.5", "Falha e recuperação"));
   const ri = REC.inicializacao, rf = REC.funcional;
   t.push(p("Os dois tipos de falha definidos no Apêndice D foram injetados três vezes cada na API. Como a suíte de testes barra os dois defeitos — o que é, em si, um resultado positivo da esteira —, o commit defeituoso desligou a etapa de testes para simular um defeito que escapa à suíte. A Tabela 5 apresenta os tempos medidos; a reação (t2 − t1) foi executada por script logo após a detecção e representa, portanto, o tempo mínimo, sem o tempo humano de resposta a um alerta."));
-  t.push(legendaTabela("Tabela 5 – Tempos de detecção e recuperação (3 repetições por tipo)"));
+  t.push(legendaTabela("Tabela 5 – Tempos de detecção e recuperação, em segundos (3 repetições por tipo)"));
   t.push(tabela(["Intervalo", "Inicialização média", "mín.", "máx.", "Funcional média", "mín.", "máx."], [
     ["Detecção (t1 − t0)", ...mmm(ri.deteccao_s, "ri.det"), ...mmm(rf.deteccao_s, "rf.det")],
     ["Reação (t2 − t1)", ...mmm(ri.reacao_s, "ri.rea"), ...mmm(rf.reacao_s, "rf.rea")],
@@ -97,7 +104,7 @@ module.exports = (H, R) => {
     ["**Total (t3 − t0)**", ...mmm(ri.total_s, "ri.tot"), ...mmm(rf.total_s, "rf.tot")],
   ], [28, 14, 10, 10, 14, 10, 10]));
   t.push(fonte("Fonte: elaborado pelo autor (Apêndice D, etapa 5)."));
-  t.push(p(`Na falha de inicialização, a versão defeituosa nunca atendeu tráfego: o rolling update manteve o pod anterior, a rota pública respondeu ${ri.health_publico_durante_falha.join(" e ")} durante todo o episódio e o Argo CD marcou a aplicação como Degraded quando o prazo de progresso de 180 segundos expirou — o que define o tempo de detecção. O impacto para o usuário foi nulo; o rollback apenas devolve o estado declarado ao da versão estável. Na falha funcional, ao contrário, a versão entrou no ar, passou nas sondas e o Argo CD a exibiu como Synced e Healthy: só a observação externa da rota — a verificação de GET /produtos — detectou os erros 500. Esse contraste é o principal resultado do experimento: a plataforma impede, sem intervenção, que uma versão que não inicia substitua a anterior, mas um defeito funcional depende da observabilidade para ser detectado, o que justifica o requisito RNF07.`));
+  t.push(p(`Na falha de inicialização, a versão defeituosa nunca atendeu tráfego: o rolling update manteve o pod anterior, a rota pública respondeu ${ri.health_publico_durante_falha.join(" e ")} durante todo o episódio e o Argo CD marcou a aplicação como Degraded quando o prazo de progresso de 180 segundos expirou — o que define o tempo de detecção. O impacto para o usuário foi nulo; o rollback apenas devolve o estado declarado ao da versão estável. Na falha funcional, ao contrário, a versão entrou no ar, passou nas sondas e o Argo CD a exibiu como Synced e Healthy, e só a observabilidade detectou o problema. O alerta de erros 5xx do Grafana Cloud disparou, em média, ${seg(rf.deteccao_s.media)} após a versão defeituosa entrar no overlay, enquanto a primeira resposta 500 observada por uma sonda externa ocorreu ${seg(R.recuperacao.funcional.deteccao_sonda_s.media)} após. A diferença soma o intervalo de exportação das métricas pelo SDK (60 segundos), a janela de 2 minutos da taxa de erros e o período de confirmação de 2 minutos da regra, escolhidos para evitar alarmes por erros isolados; uma janela menor detectaria antes, ao custo de mais alarmes falsos. Esse contraste é o principal resultado do experimento: a plataforma impede, sem intervenção, que uma versão que não inicia substitua a anterior, mas um defeito funcional depende da observabilidade para ser detectado, o que justifica o requisito RNF07.`));
   t.push(p(`A reconciliação após a reversão levou em média ${seg(ri.reconciliacao_s.media)} e ${seg(rf.reconciliacao_s.media)}, dominada novamente pela consulta periódica do Argo CD ao Git (em média ${seg(ri.argo_detectou_reversao_s.media)} e ${seg(rf.argo_detectou_reversao_s.media)} até a nova revisão ser detectada). Corrigir a falha pelo repositório da aplicação, com uma nova versão, levaria além disso o tempo da esteira (Tabela 2); a reversão no overlay devolve a imagem anterior, já existente, sem novo build. A Figura 6 mostra a linha do tempo de uma das repetições de cada tipo.`));
 
   // 5.6
@@ -112,6 +119,11 @@ module.exports = (H, R) => {
   ], [36, 16, 16, 16, 16]));
   t.push(fonte("Fonte: elaborado pelo autor (Apêndice D, etapa 6)."));
   t.push(p(`Os componentes comuns consomem cerca de ${num(tot.cpu / 20, 0)}% da CPU e ${num(tot.mem / 118.7, 0)}% da memória do nó em repouso, deixando a maior parte da capacidade para as aplicações. A coleta de telemetria é o maior consumidor de memória, mesmo com o armazenamento e a consulta fora do cluster; manter Prometheus, Loki e Tempo no próprio nó, como seria necessário sem o Grafana Cloud, aumentaria esse valor. O resultado sustenta o requisito RNF06.`));
+  const OC = R.overhead && R.overhead.com_apps_carga;
+  if (OC) {
+    const totC = comp.reduce((a, [, ns]) => a + (OC[ns] ? OC[ns].cpu_m : 0), 0);
+    t.push(p(`Durante a carga da Seção 5.4, os mesmos componentes somaram ${num(totC, 0)} milicores, com o aumento concentrado no Kong (${num(OC.kong.cpu_m, 0)} milicores), que encaminha as requisições, e no Argo CD; a API em homologação usou ${num(OC["catalogo-api-hml"].cpu_m, 0)} milicores e ${num(OC["catalogo-api-hml"].mem_mi, 0)} MiB, e o frontend menos de ${num(Math.max(1, Math.ceil(OC["catalogo-front-hml"].cpu_m)), 0)} milicores e ${num(Math.ceil(OC["catalogo-front-hml"].mem_mi), 0)} MiB.`));
+  }
 
   // 5.7
   t.push(h2("5.7", "Verificação dos requisitos"));
