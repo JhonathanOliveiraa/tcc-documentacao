@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="760" viewBox="0 0 1700 760" font-family="Arial">
+<defs>
+<marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker>
+<marker id="pi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="30" y="40" font-size="22" font-weight="bold" text-anchor="start" fill="#111111">Integração contínua (GitHub Actions, template compartilhado)</text>
+<rect x="30" y="70" width="190" height="120" rx="10" fill="#E8EEF7" stroke="#333333" stroke-width="2"/>
+<text x="125" y="98" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Commit</text>
+<text x="125" y="124" font-size="16" text-anchor="middle" fill="#444444">push na main</text>
+<text x="125" y="146" font-size="16" text-anchor="middle" fill="#444444">do repositório</text>
+<text x="125" y="168" font-size="16" text-anchor="middle" fill="#444444">da aplicação</text>
+<rect x="260" y="70" width="190" height="120" rx="10" fill="#EAF4EA" stroke="#333333" stroke-width="2"/>
+<text x="355" y="111" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Testes</text>
+<text x="355" y="137" font-size="16" text-anchor="middle" fill="#444444">dotnet test /</text>
+<text x="355" y="159" font-size="16" text-anchor="middle" fill="#444444">npm test</text>
+<rect x="490" y="70" width="190" height="120" rx="10" fill="#EAF4EA" stroke="#333333" stroke-width="2"/>
+<text x="585" y="111" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Trivy (código)</text>
+<text x="585" y="137" font-size="16" text-anchor="middle" fill="#444444">CRITICAL com</text>
+<text x="585" y="159" font-size="16" text-anchor="middle" fill="#444444">correção: falha</text>
+<rect x="720" y="70" width="190" height="120" rx="10" fill="#EAF4EA" stroke="#333333" stroke-width="2"/>
+<text x="815" y="98" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Build</text>
+<text x="815" y="124" font-size="16" text-anchor="middle" fill="#444444">linux/arm64</text>
+<text x="815" y="146" font-size="16" text-anchor="middle" fill="#444444">(compilação</text>
+<text x="815" y="168" font-size="16" text-anchor="middle" fill="#444444">cruzada)</text>
+<rect x="950" y="70" width="190" height="120" rx="10" fill="#EAF4EA" stroke="#333333" stroke-width="2"/>
+<text x="1045" y="111" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Push GHCR</text>
+<text x="1045" y="137" font-size="16" text-anchor="middle" fill="#444444">tag sha-&lt;commit&gt;</text>
+<text x="1045" y="159" font-size="16" text-anchor="middle" fill="#444444">+ digest</text>
+<rect x="1180" y="70" width="190" height="120" rx="10" fill="#EAF4EA" stroke="#333333" stroke-width="2"/>
+<text x="1275" y="111" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Trivy (imagem)</text>
+<text x="1275" y="137" font-size="16" text-anchor="middle" fill="#444444">CRITICAL com</text>
+<text x="1275" y="159" font-size="16" text-anchor="middle" fill="#444444">correção: falha</text>
+<rect x="1410" y="70" width="190" height="120" rx="10" fill="#FFF4E0" stroke="#333333" stroke-width="2"/>
+<text x="1505" y="111" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Commit no</text>
+<text x="1505" y="137" font-size="16" text-anchor="middle" fill="#444444">apps/&lt;app&gt;/hml</text>
+<text x="1505" y="159" font-size="16" text-anchor="middle" fill="#444444">tag + digest</text>
+<path d="M220,130 L260,130" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M450,130 L490,130" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M680,130 L720,130" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M910,130 L950,130" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1140,130 L1180,130" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1370,130 L1410,130" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="30" y="240" font-size="18" font-weight="normal" text-anchor="start" fill="#111111">A esteira não tem credencial do cluster: sua saída é um commit no repositório da plataforma.</text>
+<text x="30" y="325" font-size="22" font-weight="bold" text-anchor="start" fill="#111111">Entrega contínua (Argo CD, dentro do cluster)</text>
+<rect x="30" y="345" width="250" height="130" rx="10" fill="#FFF4E0" stroke="#333333" stroke-width="2"/>
+<text x="155" y="389.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Argo CD detecta</text>
+<text x="155" y="417.7" font-size="18" text-anchor="middle" fill="#444444">polling do Git</text>
+<text x="155" y="441.7" font-size="18" text-anchor="middle" fill="#444444">(até 3 min) ou refresh</text>
+<rect x="330" y="345" width="250" height="130" rx="10" fill="#FFF4E0" stroke="#333333" stroke-width="2"/>
+<text x="455" y="389.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Renderiza</text>
+<text x="455" y="417.7" font-size="18" text-anchor="middle" fill="#444444">kustomize build</text>
+<text x="455" y="441.7" font-size="18" text-anchor="middle" fill="#444444">apps/&lt;app&gt;/&lt;amb&gt;</text>
+<rect x="630" y="345" width="250" height="130" rx="10" fill="#FFF4E0" stroke="#333333" stroke-width="2"/>
+<text x="755" y="389.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Sincroniza</text>
+<text x="755" y="417.7" font-size="18" text-anchor="middle" fill="#444444">server-side apply</text>
+<text x="755" y="441.7" font-size="18" text-anchor="middle" fill="#444444">prune + self-heal</text>
+<rect x="930" y="345" width="270" height="130" rx="10" fill="#EEF0FF" stroke="#333333" stroke-width="2"/>
+<text x="1065" y="375.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Rolling update</text>
+<text x="1065" y="403.7" font-size="18" text-anchor="middle" fill="#444444">maxUnavailable 0;</text>
+<text x="1065" y="427.7" font-size="18" text-anchor="middle" fill="#444444">pod novo só entra</text>
+<text x="1065" y="451.7" font-size="18" text-anchor="middle" fill="#444444">com readiness 200</text>
+<rect x="1250" y="345" width="200" height="130" rx="10" fill="#EAF4EA" stroke="#333333" stroke-width="2"/>
+<text x="1350" y="403.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Synced</text>
+<text x="1350" y="431.7" font-size="18" text-anchor="middle" fill="#444444">Healthy</text>
+<path d="M280,410 L330,410" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M580,410 L630,410" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M880,410 L930,410" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1200,410 L1250,410" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1505,190 L1505,268 L155,268 L155,345" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<rect x="30" y="560" width="380" height="120" rx="10" fill="#E8EEF7" stroke="#333333" stroke-width="2"/>
+<text x="220" y="599.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Promoção para prd</text>
+<text x="220" y="627.7" font-size="18" text-anchor="middle" fill="#444444">workflow promover: copia</text>
+<text x="220" y="651.7" font-size="18" text-anchor="middle" fill="#444444">tag + digest hml → prd</text>
+<rect x="470" y="560" width="380" height="120" rx="10" fill="#E8EEF7" stroke="#333333" stroke-width="2"/>
+<text x="660" y="599.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Rollback</text>
+<text x="660" y="627.7" font-size="18" text-anchor="middle" fill="#444444">git revert do commit</text>
+<text x="660" y="651.7" font-size="18" text-anchor="middle" fill="#444444">deploy(&lt;app&gt;) no tcc-platform</text>
+<rect x="930" y="560" width="520" height="120" rx="10" fill="#FDECEC" stroke="#333333" stroke-width="2"/>
+<text x="1190" y="599.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Versão que não fica pronta</text>
+<text x="1190" y="627.7" font-size="18" text-anchor="middle" fill="#444444">pods antigos seguem atendendo;</text>
+<text x="1190" y="651.7" font-size="18" text-anchor="middle" fill="#444444">Argo CD mostra Progressing/Degraded</text>
+<path d="M220,560 L220,520 L195,520 L195,475" fill="none" stroke="#333333" stroke-width="2.4" stroke-dasharray="8 6" marker-end="url(#pf)"/>
+<path d="M660,560 L660,520 L235,520 L235,475" fill="none" stroke="#333333" stroke-width="2.4" stroke-dasharray="8 6" marker-end="url(#pf)"/>
+<text x="667.5" y="512" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">novo commit → mesmo fluxo</text>
+<path d="M1065,475 L1065,560" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1155" y="509.5" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">falha na readiness</text>
+</svg>

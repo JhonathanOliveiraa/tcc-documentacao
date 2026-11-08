@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="850" viewBox="0 0 1700 850" font-family="Arial">
+<defs>
+<marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker>
+<marker id="pi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<rect x="30" y="30" width="1030" height="760" rx="10" fill="#FAFAFA" stroke="#333333" stroke-width="2"/>
+<text x="44" y="62" font-size="22" font-weight="bold" text-anchor="start" fill="#111111">Cluster k3s (namespace monitoring e namespaces das aplicações)</text>
+<rect x="60" y="100" width="330" height="150" rx="10" fill="#EEF0FF" stroke="#333333" stroke-width="2"/>
+<text x="225" y="140.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">catalogo-api</text>
+<text x="225" y="168.7" font-size="18" text-anchor="middle" fill="#444444">OpenTelemetry SDK .NET</text>
+<text x="225" y="192.7" font-size="18" text-anchor="middle" fill="#444444">ASP.NET Core · HttpClient · EF Core</text>
+<text x="225" y="216.7" font-size="18" text-anchor="middle" fill="#444444">configurado só por OTEL_*</text>
+<rect x="60" y="300" width="330" height="110" rx="10" fill="#EEF0FF" stroke="#333333" stroke-width="2"/>
+<text x="225" y="334.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">catalogo-front</text>
+<text x="225" y="362.7" font-size="18" text-anchor="middle" fill="#444444">nginx; sem SDK no navegador;</text>
+<text x="225" y="386.7" font-size="18" text-anchor="middle" fill="#444444">logs de acesso em stdout</text>
+<rect x="60" y="450" width="330" height="120" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="225" y="489.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Métricas do cluster</text>
+<text x="225" y="517.7" font-size="18" text-anchor="middle" fill="#444444">kube-state-metrics, node-exporter,</text>
+<text x="225" y="541.7" font-size="18" text-anchor="middle" fill="#444444">kubelet / cAdvisor</text>
+<rect x="60" y="610" width="330" height="120" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="225" y="663.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Logs dos contêineres</text>
+<text x="225" y="691.7" font-size="18" text-anchor="middle" fill="#444444">/var/log/pods (stdout/stderr)</text>
+<rect x="560" y="180" width="460" height="470" rx="10" fill="#FDECEC" stroke="#333333" stroke-width="2"/>
+<text x="574" y="212" font-size="22" font-weight="bold" text-anchor="start" fill="#111111">Grafana Alloy</text>
+<rect x="590" y="240" width="400" height="110" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="790" y="274.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">otelcol.receiver.otlp</text>
+<text x="790" y="302.7" font-size="18" text-anchor="middle" fill="#444444">gRPC 4317 / HTTP 4318</text>
+<text x="790" y="326.7" font-size="18" text-anchor="middle" fill="#444444">(pipeline remoto tcc_otlp_receiver)</text>
+<rect x="590" y="380" width="400" height="100" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="790" y="423.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">coleta de métricas do cluster</text>
+<text x="790" y="451.7" font-size="18" text-anchor="middle" fill="#444444">(pipeline do k8s-monitoring)</text>
+<rect x="590" y="510" width="400" height="100" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="790" y="553.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">coleta de logs e eventos</text>
+<text x="790" y="581.7" font-size="18" text-anchor="middle" fill="#444444">rótulos namespace, pod, contêiner</text>
+<path d="M390,175 L590,295" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="490" y="217" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">OTLP gRPC</text>
+<text x="490" y="237" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">traces, métricas, logs</text>
+<path d="M390,510 L590,430" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="490" y="462" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">scrape</text>
+<path d="M390,670 L480,670 L480,560 L590,560" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="439" y="662" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">arquivos</text>
+<rect x="1150" y="100" width="520" height="640" rx="10" fill="#FDECEC" stroke="#333333" stroke-width="2"/>
+<text x="1164" y="132" font-size="22" font-weight="bold" text-anchor="start" fill="#111111">Grafana Cloud (fora do cluster)</text>
+<rect x="1180" y="160" width="460" height="80" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1410" y="207.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Gateway OTLP / remote write</text>
+<rect x="1180" y="280" width="140" height="90" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1250" y="318.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Tempo</text>
+<text x="1250" y="346.7" font-size="18" text-anchor="middle" fill="#444444">traces</text>
+<rect x="1340" y="280" width="140" height="90" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1410" y="318.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Mimir</text>
+<text x="1410" y="346.7" font-size="18" text-anchor="middle" fill="#444444">métricas</text>
+<rect x="1500" y="280" width="140" height="90" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1570" y="318.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Loki</text>
+<text x="1570" y="346.7" font-size="18" text-anchor="middle" fill="#444444">logs</text>
+<rect x="1180" y="420" width="460" height="110" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1410" y="454.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Grafana</text>
+<text x="1410" y="482.7" font-size="18" text-anchor="middle" fill="#444444">painéis Kubernetes · Application</text>
+<text x="1410" y="506.7" font-size="18" text-anchor="middle" fill="#444444">Observability · Explore</text>
+<rect x="1180" y="560" width="220" height="150" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1290" y="600.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Alertas</text>
+<text x="1290" y="628.7" font-size="18" text-anchor="middle" fill="#444444">regras sobre</text>
+<text x="1290" y="652.7" font-size="18" text-anchor="middle" fill="#444444">métricas e</text>
+<text x="1290" y="676.7" font-size="18" text-anchor="middle" fill="#444444">sintéticos</text>
+<rect x="1420" y="560" width="220" height="150" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1530" y="600.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Synthetic</text>
+<text x="1530" y="628.7" font-size="18" text-anchor="middle" fill="#444444">Monitoring:</text>
+<text x="1530" y="652.7" font-size="18" text-anchor="middle" fill="#444444">GET /healthz</text>
+<text x="1530" y="676.7" font-size="18" text-anchor="middle" fill="#444444">e /health</text>
+<path d="M1020,300 L1100,300 L1100,200 L1180,200" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1064" y="242" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">HTTPS</text>
+<path d="M1250,240 L1250,280" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1410,240 L1410,280" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1570,240 L1570,280" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1250,370 L1250,420" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1410,370 L1410,420" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1570,370 L1570,420" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M1530,710 L1530,815 L1068,815" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1299" y="807" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">verifica as rotas públicas (HTTPS)</text>
+</svg>

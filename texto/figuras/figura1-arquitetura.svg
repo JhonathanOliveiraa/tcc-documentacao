@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="960" viewBox="0 0 1700 960" font-family="Arial">
+<defs>
+<marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker>
+<marker id="pi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<rect x="30" y="30" width="520" height="760" rx="10" fill="#E8EEF7" stroke="#333333" stroke-width="2"/>
+<text x="44" y="64" font-size="24" font-weight="bold" text-anchor="start" fill="#111111">GitHub</text>
+<rect x="55" y="85" width="230" height="120" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="170" y="111.85" font-size="21" font-weight="bold" text-anchor="middle" fill="#111111">Aplicações</text>
+<text x="170" y="138.85" font-size="17" text-anchor="middle" fill="#444444">catalogo-api</text>
+<text x="170" y="161.85" font-size="17" text-anchor="middle" fill="#444444">catalogo-front</text>
+<text x="170" y="184.85" font-size="17" text-anchor="middle" fill="#444444">(código, ci.yml)</text>
+<rect x="300" y="85" width="225" height="120" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="412.5" y="125.35" font-size="21" font-weight="bold" text-anchor="middle" fill="#111111">Templates</text>
+<text x="412.5" y="152.35" font-size="17" text-anchor="middle" fill="#444444">tcc-pipeline-</text>
+<text x="412.5" y="175.35" font-size="17" text-anchor="middle" fill="#444444">templates</text>
+<rect x="55" y="260" width="470" height="110" rx="10" fill="#EAF4EA" stroke="#333333" stroke-width="2"/>
+<text x="290" y="294.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">GitHub Actions</text>
+<text x="290" y="322.7" font-size="18" text-anchor="middle" fill="#444444">testes → Trivy → build linux/arm64</text>
+<text x="290" y="346.7" font-size="18" text-anchor="middle" fill="#444444">→ Trivy na imagem → publicação</text>
+<rect x="55" y="430" width="190" height="120" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="150" y="483.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">GHCR</text>
+<text x="150" y="511.7" font-size="18" text-anchor="middle" fill="#444444">imagens</text>
+<rect x="275" y="430" width="250" height="160" rx="10" fill="#FFF4E0" stroke="#333333" stroke-width="2"/>
+<text x="400" y="475.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">tcc-platform</text>
+<text x="400" y="503.7" font-size="18" text-anchor="middle" fill="#444444">(GitOps)</text>
+<text x="400" y="527.7" font-size="18" text-anchor="middle" fill="#444444">golden-path/base</text>
+<text x="400" y="551.7" font-size="18" text-anchor="middle" fill="#444444">apps/&lt;app&gt;/&lt;amb&gt;</text>
+<path d="M170,205 L170,260" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="200" y="238.5" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">push</text>
+<path d="M412.5,205 L412.5,260" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="446.5" y="238.5" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">uses:</text>
+<path d="M150,370 L150,430" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="196" y="404" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">imagem</text>
+<path d="M400,370 L400,430" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="466" y="404" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">tag + digest</text>
+<rect x="600" y="30" width="760" height="900" rx="10" fill="#FAFAFA" stroke="#333333" stroke-width="2"/>
+<text x="614" y="62" font-size="22" font-weight="bold" text-anchor="start" fill="#111111">VM OCI A1.Flex (ARM64, 2 OCPU, 12 GB) — k3s</text>
+<rect x="630" y="90" width="330" height="110" rx="10" fill="#FFF4E0" stroke="#333333" stroke-width="2"/>
+<text x="795" y="124.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Argo CD</text>
+<text x="795" y="152.7" font-size="18" text-anchor="middle" fill="#444444">ApplicationSet (apps/*/*)</text>
+<text x="795" y="176.7" font-size="18" text-anchor="middle" fill="#444444">AppProject tcc</text>
+<rect x="1000" y="90" width="330" height="110" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1165" y="138.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Kong (Gateway API)</text>
+<text x="1165" y="166.7" font-size="18" text-anchor="middle" fill="#444444">Gateway + HTTPRoute, TLS</text>
+<rect x="1000" y="240" width="330" height="110" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1165" y="288.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">cert-manager</text>
+<text x="1165" y="316.7" font-size="18" text-anchor="middle" fill="#444444">certificados Let's Encrypt</text>
+<rect x="1000" y="400" width="330" height="110" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="1165" y="434.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">External Secrets</text>
+<text x="1165" y="462.7" font-size="18" text-anchor="middle" fill="#444444">Operator (Instance</text>
+<text x="1165" y="486.7" font-size="18" text-anchor="middle" fill="#444444">Principal)</text>
+<rect x="1000" y="570" width="330" height="140" rx="10" fill="#FDECEC" stroke="#333333" stroke-width="2"/>
+<text x="1165" y="619.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Grafana Alloy</text>
+<text x="1165" y="647.7" font-size="18" text-anchor="middle" fill="#444444">receptor OTLP; métricas do</text>
+<text x="1165" y="671.7" font-size="18" text-anchor="middle" fill="#444444">cluster; logs dos contêineres</text>
+<rect x="630" y="390" width="320" height="380" rx="10" fill="#EEF0FF" stroke="#333333" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="644" y="422" font-size="22" font-weight="bold" text-anchor="start" fill="#111111">Namespaces &lt;app&gt;-&lt;amb&gt;</text>
+<rect x="655" y="440" width="270" height="80" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="790" y="473.85" font-size="21" font-weight="bold" text-anchor="middle" fill="#111111">catalogo-front</text>
+<text x="790" y="500.85" font-size="17" text-anchor="middle" fill="#444444">nginx · SPA Angular</text>
+<rect x="655" y="560" width="270" height="80" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="790" y="593.85" font-size="21" font-weight="bold" text-anchor="middle" fill="#111111">catalogo-api</text>
+<text x="790" y="620.85" font-size="17" text-anchor="middle" fill="#444444">ASP.NET Core · OTel SDK</text>
+<rect x="655" y="680" width="270" height="60" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="790" y="717" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">PostgreSQL 17</text>
+<rect x="630" y="810" width="320" height="90" rx="10" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text x="790" y="849" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Reloader</text>
+<text x="790" y="875" font-size="16" text-anchor="middle" fill="#444444">reinicia pods se um Secret muda</text>
+<text x="1165" y="790" font-size="17" font-weight="normal" text-anchor="middle" fill="#111111">Apps sem root, raiz somente leitura,</text>
+<text x="1165" y="813" font-size="17" font-weight="normal" text-anchor="middle" fill="#111111">sem acesso a 169.254.169.254;</text>
+<text x="1165" y="836" font-size="17" font-weight="normal" text-anchor="middle" fill="#111111">componentes com requests/limits.</text>
+<rect x="1400" y="90" width="270" height="110" rx="10" fill="#F3F3F3" stroke="#333333" stroke-width="2"/>
+<text x="1535" y="138.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Usuário</text>
+<text x="1535" y="166.7" font-size="18" text-anchor="middle" fill="#444444">navegador</text>
+<rect x="1400" y="220" width="270" height="70" rx="10" fill="#F3F3F3" stroke="#333333" stroke-width="2"/>
+<text x="1535" y="262" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Cloudflare DNS</text>
+<rect x="1400" y="300" width="270" height="70" rx="10" fill="#F3F3F3" stroke="#333333" stroke-width="2"/>
+<text x="1535" y="342" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">Let's Encrypt</text>
+<rect x="1400" y="400" width="270" height="110" rx="10" fill="#F3F3F3" stroke="#333333" stroke-width="2"/>
+<text x="1535" y="448.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">OCI Vault</text>
+<text x="1535" y="476.7" font-size="18" text-anchor="middle" fill="#444444">segredos fora do Git</text>
+<rect x="1400" y="560" width="270" height="200" rx="10" fill="#FDECEC" stroke="#333333" stroke-width="2"/>
+<text x="1535" y="625.7" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Grafana Cloud</text>
+<text x="1535" y="653.7" font-size="18" text-anchor="middle" fill="#444444">Mimir · Loki · Tempo</text>
+<text x="1535" y="677.7" font-size="18" text-anchor="middle" fill="#444444">painéis · alertas</text>
+<text x="1535" y="701.7" font-size="18" text-anchor="middle" fill="#444444">sintéticos</text>
+<path d="M525,470 L575,470 L575,145 L630,145" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="551" y="299.5" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">pull</text>
+<path d="M795,200 L795,390" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="835" y="287" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">aplica</text>
+<path d="M150,550 L150,730 L630,730" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="430" y="722" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">pull por digest</text>
+<path d="M1400,145 L1330,145" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1365" y="137" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">HTTPS</text>
+<path d="M1165,240 L1165,200" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1227" y="226" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">certificado</text>
+<path d="M1330,280 L1400,255" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1359" y="253.5" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">DNS-01</text>
+<path d="M1330,320 L1400,335" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1365" y="349.5" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">ACME</text>
+<path d="M1000,180 L975,180 L975,480 L925,480" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="949" y="322" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">rota</text>
+<path d="M1330,455 L1400,455" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1365" y="447" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">lê</text>
+<path d="M1000,495 L955,495 L955,590 L925,590" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="923" y="552.5" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">Secret</text>
+<path d="M925,620 L1000,620" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="980.5" y="612" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">OTLP</text>
+<path d="M1330,640 L1400,640" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<text x="1365" y="632" font-size="17" text-anchor="middle" fill="#111111" font-style="italic" stroke="#FFFFFF" stroke-width="5" paint-order="stroke">OTLP</text>
+<path d="M790,640 L790,680" fill="none" stroke="#333333" stroke-width="2.4" marker-end="url(#pf)"/>
+<path d="M790,810 L790,770" fill="none" stroke="#333333" stroke-width="2.4" stroke-dasharray="8 6" marker-end="url(#pf)"/>
+</svg>
